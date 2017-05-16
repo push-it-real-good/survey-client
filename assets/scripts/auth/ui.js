@@ -1,12 +1,11 @@
 'use strict'
 
 const store = require('../store.js')
-// const jobsEvents = require('../jobs/events.js')
 
 const signUpSuccess = (data) => {
   $('#signUpModal').hide()
   $('#signInModal').show()
-  $('.header-message').show().html('Congratulations, you have a new account.')
+  // $('.header-message').show().html('Congratulations, you have a new account.')
   $('.sign-in-msg').html('Log in.')
   $('#sign-in').trigger('reset')
 }
@@ -22,19 +21,13 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
-  // console.log(store.user)
-  // jobsEvents.getJobs()
-
-  $('.navbar').show()
-  $('.nav-btns').show()
-  $('.task-work-flow').show()
   $('#signUpModal').hide()
-  $('.header-message').hide()
   $('#signInModal').hide()
-  $('#salutaion-message').html('Family Camp Checklist')
-  $('.nav-message').hide()
+  $('#title-message').html('Survey Creation Tool')
+  // $('.nav-message').hide()
   $('#ChangePasswordSuccess').hide()
   $('#change-password').trigger('reset')
+  $('.nav-btns').show()
 }
 
 const signInFailure = (error) => {
@@ -43,14 +36,13 @@ const signInFailure = (error) => {
     $('#signInError').fadeOut(700)
   }, 1000)
   $('#sign-in').trigger('reset')
-  console.error('signIn failed ran data is:', error)
+  console.error('signInFailure(), error: ', error)
 }
 
 const signOutSuccess = () => {
   store.user = null
   $('#confirm-logout').modal('hide')
   $('.nav-btns').hide()
-  $('.task-work-flow').hide()
   $('#signUpModal').hide()
   $('#signUpModal').trigger('reset')
   $('#signInModal').trigger('reset')
@@ -65,7 +57,7 @@ const signOutFailure = (error) => {
 
 const changePasswordSuccess = () => {
   $('#ChangePasswordError').hide()
-  $('#ChangePasswordSuccess').show().html('Password changed! Close Modal to continue.')
+  $('#ChangePasswordSuccess').show().html('Password changed! Close Screen to continue.')
   $('#change-password').trigger('reset')
   $('.form-group-pw').hide()
 }

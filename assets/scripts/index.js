@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const authEvents = require('./auth/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -26,22 +27,10 @@ $(() => {
   })
 })
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-require('./example')
-
-const authEvents = require('./auth/events.js')
-// const jobsEvents = require('./jobs/events.js')
-
 // on document ready
 $(() => {
   authEvents.addHandlers()
-  // jobsEvents.addHandlers()
-  $('.form-control').val('')
+  $('.form-control').val('')  // This clears out all the form input fields when the document is first loaded
   $('#signUpModal').hide()
-  $('.navbar').hide()
-  $('.task-work-flow').hide()
-  $('#password2').keyup(authEvents.validate)
+  $('.nav-btns').hide()
 })
