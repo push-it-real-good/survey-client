@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Survey</title>
+      <title>Project 3 Survey</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -14,13 +14,13 @@
 
     <body class="container">
 
-          <div id="jumbotron-top" class="jumbotron jumbotron-fluid  beforesignin">
-            <h2 id="salutaion-message" class="title_message ">Survey</h2>
-            <div class="jumbotron-msg container push-spaces">
-              <p></div>
-            </div>
+      <div id="jumbotron-top" class="jumbotron jumbotron-fluid  beforesignin">
+        <h2 id="salutaion-message" class="title_message ">Survey</h2>
+        <div class="jumbotron-msg container push-spaces">
+          <p></div>
+        </div>
 
-<!-- ========= Authenticat Container ============ -->
+<!-- ========= Authentication Container ============ -->
       <!-- SIGN IN -->
       <div id="signInModal" class="modal-dialog" role="document">
         <div class="modal-content">
@@ -33,6 +33,7 @@
                 <h3 id="signInError" class="form-error" ></h3>
               </div>
               <div class="modal-body">
+
         <form id="sign-in">
           <div class="form-group blue-text">
             <label for="name"> Email</label>
@@ -54,6 +55,7 @@
       </div>
         </div>
       </div>
+
 
       <!-- SIGN UP -->
       <div id="signUpModal" class="modal-dialog" role="document">
@@ -143,64 +145,16 @@
   </div>
 </div>
 
+<div class="nav-btns align-center">
+
+  <button id="LogOut" class='btn btn-primary align-center navbar-center ' type="submit" name="submit" value="SignOut" data-toggle="modal" data-target=".confirm-logout-modal"> SignOut</button>
+
+  <!-- <button id="sign-out" type="submit"  name="submit" value="SignOut" class="btn btn-primary align-center navbar-center">SignOut</button> -->
+  <button id="change-password-modal" type="button" class="btn btn-primary  navbar-center change-pw" data-toggle="modal" data-target="#changePasswordModal">Changing Password</button>
+</div>
 
 <!-- END MODAL  -->
 
-<!-- body contain-->
-      <!-- ADD TASK modal -->
-    <div id="add-task-modal" class="container">
-      <div id="job-create-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="form-title mdl-card__title">
-              <h3 class="modal-header">Add Item</h3>
-            </div>
-            <div class="form">
-            <form id="job-create-modal-form">
-            <div class="modal-body">
-              <h4 id="addTaskMsgError" class="form-error"></h4>
-              <h4 id="addTaskMsgSuccess" class="form-success"></h4>
-
-                  <input id="add-task" type="text" name="job[task]" class="form-control input-lg CreateJob required" value="" autocomplete="off" placeholder="Add New Task Here ... " maxlength="40" required >
-                </div>
-
-                  <div class="modal-footer">
-                  <button type="submit" name="submit" value="CreateJob" class="btn btn-primary btn-block"> Add Item to Checklist</button>
-                  <button type="button" class="btn btn-resolved btn-block" data-dismiss="modal">Close</button>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-
-  <!-- Task Flow -->
-<div class="task-work-flow">
-    <div class="task-buttons align-center">
-      <button id="add-task-btn" type="button" class="btn btn-primary addTaskBtn" data-toggle="modal" data-target=".bs-example-modal-lg">Add Item</button>
-      <!-- <button id="getJobsButton" class="btn btn-primary">Get My Tasks</button>
-      <button id="clearJobsButton" class="btn btn-primary">Hide Tasks</button> -->
-  </div>
-  <div id="jumbotron-list" class="jumbotron beforesignin">
-
-  <div class="text-center">
-      <h2 class="checklist-title"></h2>
-    </div>
-
-    <div class="container">
-      <div id="content" class="content"></div>
-    </div>
-  </div>
-      <div class="nav-btns align-center">
-
-        <button id="LogOut" class='btn btn-primary align-center navbar-center ' type="submit" name="submit" value="SignOut" data-toggle="modal" data-target=".confirm-logout-modal"> SignOut</button>
-
-        <!-- <button id="sign-out" type="submit"  name="submit" value="SignOut" class="btn btn-primary align-center navbar-center">SignOut</button> -->
-        <button id="change-password-modal" type="button" class="btn btn-primary  navbar-center change-pw" data-toggle="modal" data-target="#changePasswordModal">Changing Password</button>
-      </div>
-</div>
 
     </body>
 </html>
