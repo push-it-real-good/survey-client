@@ -50,22 +50,6 @@ const onSignOut = function (event) {
   .catch(ui.signOutFailure)
 }
 
-// const displaySignUp = function (event) {
-//   event.preventDefault()
-//   document.getElementById('sign-in').reset()
-//   $('.sign-up-modal').show()
-//   $('.sign-in-modal').hide()
-//
-//   // Logic to confirm if passwords match
-//
-//
-//
-//   const displayChangePw = function (event) {
-//     event.preventDefault()
-//     $('#change-password-modal').modal('show')
-//
-//     // Logic to confirm if passwords match
-
 const addHandlers = () => {
   $('#sign-up-form').on('click', onSignUpClick)
   $('#return-to-log-in').on('click', onSignInClick)
