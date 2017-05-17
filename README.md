@@ -3,6 +3,7 @@
 
 ## Project Links
 can you guys add the ERD, Wireframes, User Stories and link to Heroku to the front-end next time you push code so we have it all up there?
+
 #### Back-End
 [ProjectApiDeployed](https://team-project-mongodb.herokuapp.com/)
 [ProjectApiRepo](https://github.com/push-it-real-good/survey-express-api)
@@ -11,13 +12,25 @@ can you guys add the ERD, Wireframes, User Stories and link to Heroku to the fro
 [ProjectClientDeployed](https://push-it-real-good.github.io/survey-client/)
 [ProjectClientRepo](https://github.com/push-it-real-good/survey-client)
 
+## User Stories
 
-
-## WireFrame
+1. As a surveyor, I want to sign up, so that I can create surveys.
+2. As a surveyor, I want to sign in, so that I can create surveys.
+3. As a surveyor, I want to change a password so that I can protect my identity.
+4. As a surveyor, I want to sign out, so that I can safely log out and no one can see my survey data.
+5. As a surveyor, I want to create a survey and generate a link to each survey.
+6. As a surveyor, I want to update existing surveys so that I can modify them.
+7. As a surveyor, I want to delete a survey if it is no longer needed.
+8. As a surveyor, I want to be able to view all results of a survey in a dashboard.
+9. As a respondent, I want to be able to fill out the survey.
+10.As a respondent, I want to be able to submit the survey.
 
 ## WireFrame
 
 ![p2_wireframe](https://cloud.githubusercontent.com/assets/26236941/25646484/cc5492c6-2f86-11e7-9da2-9e407dee9f7e.JPG)
+
+
+
 
 # browser-template
 
