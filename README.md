@@ -25,9 +25,8 @@ can you guys add the ERD, Wireframes, User Stories and link to Heroku to the fro
 9. As a respondent, I want to be able to fill out the survey.
 10.As a respondent, I want to be able to submit the survey.
 
-## WireFrame
-
-![p2_wireframe](https://cloud.githubusercontent.com/assets/26236941/25646484/cc5492c6-2f86-11e7-9da2-9e407dee9f7e.JPG)
+## ERD
+<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
 
 
 
