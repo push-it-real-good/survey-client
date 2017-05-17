@@ -26,11 +26,21 @@ const updateSurveySuccess = (data) => {
 const updateSurveyFailure = (error) => {
   console.error(error)
 }
+
+const getSurveysSuccess = (data) => {
+  store.user = data.user
+}
+
+const getSurveysFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   clearSurveyModal,
   createSurveySuccess,
   createSurveyFailure,
   updateSurveySuccess,
-  updateSurveyFailure
-
+  updateSurveyFailure,
+  getSurveysSuccess,
+  getSurveysFailure
 }
