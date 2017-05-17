@@ -1,0 +1,12 @@
+{{#each surveys as |survey|}}
+
+  <li id="total-{{survey.id}}" data-id="{{survey.id}}" class="container col-md-12 box surveys {{survey.id}} list-unstyled">
+    <form class=" {{survey.id}} update-survey container" id="{{survey.id}}">
+      <!-- update -->
+        <input type="text" id="input-{{survey.id}}" placeholder="{{survey.name}}" required>
+        <input type="submit" value="Update Survey!" class="update-survey">
+      <!-- remove -->
+        <input type="submit" id="{{survey.id}}" value="Remove Survey!" data-id="{{survey.id}}" class="remove-survey">
+    </form>
+  </li>
+{{/each}}

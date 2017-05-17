@@ -81,6 +81,7 @@ const onGetSurveys = function (event) {
   .then(function (data) {
     ui.getSurveysSuccess(data)
   })
+  // .then(ui.getSurveysSuccess)
   .catch(ui.getSurveysFailure)
 }
 
