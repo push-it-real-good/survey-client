@@ -2,7 +2,6 @@
 
 
 ## Project Links
-can you guys add the ERD, Wireframes, User Stories and link to Heroku to the front-end next time you push code so we have it all up there?
 
 #### Back-End
 [ProjectApiDeployed](https://team-project-mongodb.herokuapp.com/)
@@ -11,6 +10,14 @@ can you guys add the ERD, Wireframes, User Stories and link to Heroku to the fro
 #### Front-End
 [ProjectClientDeployed](https://push-it-real-good.github.io/survey-client/)
 [ProjectClientRepo](https://github.com/push-it-real-good/survey-client)
+
+## ERD
+
+<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
+
+## Wireframe
+
+![survey-wireframe](https://cloud.githubusercontent.com/assets/26236941/26161204/390c7648-3af1-11e7-88c3-dbf4c6476183.jpg)
 
 ## User Stories
 
@@ -24,13 +31,6 @@ can you guys add the ERD, Wireframes, User Stories and link to Heroku to the fro
 8. As a surveyor, I want to be able to view all results of a survey in a dashboard.
 9. As a respondent, I want to be able to fill out the survey.
 10.As a respondent, I want to be able to submit the survey.
-
-## ERD
-<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
-
-## Wireframe
-![survey-wireframe](https://cloud.githubusercontent.com/assets/26236941/26161204/390c7648-3af1-11e7-88c3-dbf4c6476183.jpg)
-
 
 
 # browser-template
