@@ -28,6 +28,8 @@ can you guys add the ERD, Wireframes, User Stories and link to Heroku to the fro
 ## ERD
 <img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
 
+## Wireframe
+![survey-wireframe](https://cloud.githubusercontent.com/assets/26236941/26161204/390c7648-3af1-11e7-88c3-dbf4c6476183.jpg)
 
 
 
