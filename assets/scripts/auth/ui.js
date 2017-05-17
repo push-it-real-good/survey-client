@@ -21,6 +21,7 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
+  console.log('sign in token = ', data.user.token)
   $('#signUpModal').hide()
   $('#signInModal').hide()
   $('#title-message').html('Survey Creation Tool')
@@ -28,6 +29,8 @@ const signInSuccess = (data) => {
   $('#ChangePasswordSuccess').hide()
   $('#change-password').trigger('reset')
   $('.nav-btns').show()
+  $('.create-a-survey').show()
+  $('.update-a-survey').show()
 }
 
 const signInFailure = (error) => {
