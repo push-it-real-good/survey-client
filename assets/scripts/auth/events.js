@@ -14,23 +14,22 @@ const onSignUpClick = function (event) {
 
     const badColor = '#ff6666'
     const goodColor = '#66cc66'
-  // const goodColor = '#CCE4D5'
-  // const badColor = '#F8C6C0'
+
     if (pass1.value === pass2.value) {
       document.getElementById('chpw-submit').disabled = false
       pass2.style.backgroundColor = goodColor
       message.style.color = goodColor
       message.innerHTML = 'Passwords Match!'
-    } else {
+    } else if ((pass2.value !== ('')) && (pass1.value !== pass2.value)) {
       document.getElementById('chpw-submit').disabled = true
       pass2.style.backgroundColor = badColor
       message.style.color = badColor
       message.innerHTML = 'Enter matching password!'
-    }
-
-    if (pass1.value === ('')) {
-      document.getElementById('chpw-submit').disabled = true
-      message.innerHTML = 'Enter matching password!'
+    } else {
+      document.getElementById('chpw-submit').disabled = false
+      pass2.style.backgroundColor = ''
+      message.style.color = ''
+      message.innerHTML = ''
     }
   }
 
