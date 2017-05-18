@@ -103,6 +103,7 @@ const getOneDynamicSurveySuccess = (data) => {
 // show survey id in browser
   $('#default-display-text').text(data.survey.title)
   $('#survey_id').html(data.survey.id)
+  $('#survey_id').val(data.survey.id)
   $('#survey_question').text(data.survey.question)
   $('#survey_owner').text(data.survey._owner)
 
