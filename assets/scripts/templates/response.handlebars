@@ -1,0 +1,16 @@
+<table class="table table-sm" id="response-list-table">
+  <thead>
+    <tr>
+      <th>Text</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      {{#each responses as |response|}}
+        <tr data-id="{{response.id}}">
+          <td>{{response.text}}</td>
+      </tr>
+    </tbody>
+    {{/each}}
+
+  </table>
