@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const showResponsesTemplate = require('../templates/survey.handlebars')
+const showResponsesTemplate = require('../templates/response.handlebars')
 
 const createResponseSuccess = (data) => {
   console.log('createResponseSuccess')

@@ -22,9 +22,9 @@ const getResponses = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/responses',
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data: data
     // data '{
     //     "survey_id": "'"${SURVEYID}"'"

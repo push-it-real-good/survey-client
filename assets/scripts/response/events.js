@@ -25,13 +25,12 @@ const onGetResponses = function (event) {
   console.log('woah')
   console.log('this:', this)
   console.log('event:', event)
-  // const surveyId = this.id
+  // const string = this.id
   // const data = this
-  let data = {}
-  data = { // should this be a constructor function to have one for each play?
+  let string = {}
+  string = { // should this be a constructor function to have one for each play?
     'survey_id': this.id
   }
-  const string = JSON.stringify(data)
   console.log('string ', string)
 
   api.getResponses(string)
