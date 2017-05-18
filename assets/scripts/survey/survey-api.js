@@ -38,8 +38,10 @@ const getOneSurvey = (data) => {
 }
 
 const updateSurvey = (data) => {
+  console.log('updateSurvey(), token = ', store.user.token)
+  console.log('updateSurvey(), data = ', data)
   return $.ajax({
-    url: config.apiOrigin + '/surveys/' + data.survey.id,
+    url: config.apiOrigin + '/surveys/' + data.surveys.id,
     method: 'PATCH',
     data: data,
     headers: {
