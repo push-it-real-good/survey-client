@@ -9,8 +9,6 @@ const store = require('../store')
 const onCreateResponse = function (event) {
   event.preventDefault()
   console.log('createresponse')
-  debugger;
-  return
 
   const data = getFormFields(this)
   console.log(data)
