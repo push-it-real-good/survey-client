@@ -101,10 +101,12 @@ const getOneDynamicSurveySuccess = (data) => {
   console.log('_owner:', data.survey._owner)
   console.log('length:', data.survey.length)
   console.log('question:', data.survey.question)
+// handlebars data
   // const showSurveysHtml = showSurveysTemplate({ surveys: data.survey })
   // const showSurveysHtml = showSurveysTemplate(data.survey)
-  // debugger;
   // $('.dynamic-content').html(showSurveysHtml) // .order
+  // debugger;
+
 // hide handlebars icons
   // $('.glyphicon').hide()
 // show survey id in browser
