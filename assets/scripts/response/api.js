@@ -4,15 +4,15 @@ const config = require('../config')
 const store = require('../store')
 
 const createResponse = (data) => {
-  console.log('createResponse(), token = ', store.user.token)
+  // console.log('createResponse(), token = ', store.user.token)
   console.log('createResponse(), data = ', data)
   return $.ajax({
     url: config.apiOrigin + '/responses',
     method: 'POST',
-    data: data,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    data: data // ,
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
   })
 }
 
