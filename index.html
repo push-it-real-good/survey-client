@@ -84,8 +84,11 @@
                     <input id="password1" type="password" name="credentials[password]" class="form-control" value="" autocomplete="off" placeholder="Password" required />
                     <label for="name">Password Confirmation</label>
                     <input id="password2" type="password" name="credentials[password_confirmation]" class="form-control" value="" autocomplete="off" placeholder="Confirm Password" required />
+                     <!-- Password Validation (5/18) -->
+                    <span id="confirmMessage" class="confirmMessage"></span>
                    </div>
-                   <button type="submit" name="submit" value="SignUp" class="btn btn-primary btn-block">Submit</button>
+                   <!-- Password Validation (5/18) -->
+                   <button id="chpw-submit" type="submit" name="submit" value="SignUp" class="btn btn-primary btn-block">Submit</button>
                    <div class="modal-footer"></div>
                    <div class="form-subtext">
                      <p>Did you get here on accident ?
@@ -97,7 +100,6 @@
               </div>
         </div>
       </div>
-
 <!-- Change Password Modal-->
 <!-- <div id="add-task-modal" class="container-fluid"> -->
 
@@ -262,7 +264,7 @@
           </div>
         </div>
       <div class="list-group" id ="surveys-content"></div>
-  
+
 </div>
 <!-- End of default-content -->
 
