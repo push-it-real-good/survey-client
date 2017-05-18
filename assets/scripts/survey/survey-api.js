@@ -79,6 +79,17 @@ const getDynamicSurveys = function () {
   })
 }
 
+const getOneDynamicSurvey = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys/' + '591cf7701bd11952126a6752',
+    method: 'GET',
+    data: data // ,
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+  })
+}
+
 // Exported since used in other code like events.js
 module.exports = {
   createSurvey,
@@ -87,5 +98,6 @@ module.exports = {
   deleteSurvey,
   getOneSurvey,
   // getResponses,
-  getDynamicSurveys
+  getDynamicSurveys,
+  getOneDynamicSurvey
 }

@@ -52,12 +52,19 @@ $(document).ready(function () {
     $('#oranges').show()
   } else if (dc === 'respondents') { // Check if the URL parameter is bananas
     $('#respondents').show()
-    api.getDynamicSurveys('surveys')
+    api.getOneDynamicSurvey()
       // .then(function (data) {
       //   ui.getDynamicSurveysSuccess(data)
       // })
-      .then(ui.getDynamicSurveysSuccess)
-      .catch(ui.getDynamicSurveysFailure)
+      .then(ui.getOneDynamicSurveySuccess)
+      .catch(ui.getOneDynamicSurveyFailure)
+
+      // api.getDynamicSurveys()
+      //   // .then(function (data) {
+      //   //   ui.getDynamicSurveysSuccess(data)
+      //   // })
+      //   .then(ui.getDynamicSurveysSuccess)
+      //   .catch(ui.getDynamicSurveysFailure)
     // Check if the URL parmeter is empty or not defined, display default content
   } else {
     $('#default-content').show()

@@ -90,6 +90,30 @@ const getDynamicSurveysFailure = (error) => {
   console.error(error)
 }
 
+const getOneDynamicSurveySuccess = (data) => {
+  // store.user = data.user
+  console.log(data)
+  console.log(data.survey)
+  // console.log(data.surveys[0])
+  console.log('title:', data.survey.title)
+  console.log('id:', data.survey.id)
+  console.log('url:', data.survey.url)
+  console.log('_owner:', data.survey._owner)
+  console.log('length:', data.survey.length)
+  console.log('question:', data.survey.question)
+  // const showSurveysHtml = showSurveysTemplate({ survey: data.survey })
+  const showSurveysHtml = showSurveysTemplate(data.survey)
+  // debugger;
+  $('.dynamic-content').html(showSurveysHtml) // .order
+  // $('.errors-create-item').empty()
+  $('.glyphicon').hide()
+  $('#spacer1').text('List')
+}
+
+const getOneDynamicSurveyFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   clearSurveyModal,
   createSurveySuccess,
@@ -101,5 +125,7 @@ module.exports = {
   // getResponsesSuccess,
   // getResponsesFailure
   getDynamicSurveysSuccess,
-  getDynamicSurveysFailure
+  getDynamicSurveysFailure,
+  getOneDynamicSurveySuccess,
+  getOneDynamicSurveyFailure
 }
