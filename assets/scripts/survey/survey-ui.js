@@ -1,18 +1,17 @@
 'use strict'
 
-// const store = require('../store')
-// const showChoresTemplate = require('../templates/chore-listing.handlebars')
 const store = require('../store')
+const showSurveysTemplate = require('../templates/survey.handlebars')
 
 const clearSurveyModal = function () {
   $('#title').val('')
-  $('#q1').val('')
+  // $('#q1').val('')
   // $('#q2').val('')
   // $('#q3').val('')
 }
 
 const createSurveySuccess = (data) => {
-  store.user = data.user
+  console.log('createSurveySuccess')
 }
 
 const createSurveyFailure = (error) => {
@@ -20,17 +19,32 @@ const createSurveyFailure = (error) => {
 }
 
 const updateSurveySuccess = (data) => {
-  store.user = data.user
+  store.survey = data.survey
+  console.log('updateSurveySuccess')
 }
 
 const updateSurveyFailure = (error) => {
   console.error(error)
 }
+
+const getSurveysSuccess = (data) => {
+  const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+  store.surveys = data.surveys
+  console.log('>>>>> store.surveys = ', store.surveys)
+  $('#surveys-content').html(showSurveysHtml)
+}
+
+const getSurveysFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   clearSurveyModal,
   createSurveySuccess,
   createSurveyFailure,
   updateSurveySuccess,
-  updateSurveyFailure
+  updateSurveyFailure,
+  getSurveysSuccess,
+  getSurveysFailure
 
 }

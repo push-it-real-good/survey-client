@@ -9,7 +9,6 @@ const store = require('../store')
 const onCreateSurvey = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('onCreateSurvey: data = ', data)
   api.createSurvey(data)
   .then(function (data) {
     ui.createSurveySuccess(data)
@@ -22,12 +21,31 @@ const onCreateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
+  console.log('++++ onCreateSurvey(), token = ', store.user.token)
 }
+
+// const onUpdateSurvey = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(this)
+//   console.log('>>>>>>>>onUpdateSurvey: data = ', data)
+//   api.updateSurvey(data)
+//   .then(function (data) {
+//     ui.updateSurveySuccess(data)
+//     $('#updateSurvey').modal('hide')
+//   })
+//   .catch(ui.updateSurveyFailure)
+//   // Clear out existing text in modal text boxes when there is a failure
+//   // source: http://stackoverflow.com/questions/31022950/how-clear-bootstrap-modal-on-hide
+//   $('#updateSurvey').on('hidden.bs.modal', function () {
+//     $(this).find('input,textarea,select').val('').end()
+//   })
+//   ui.clearSurveyModal()
+// }
 
 const onUpdateSurvey = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('onUpdateSurvey: data = ', data)
+  // console.log('>>>>>>>>onUpdateSurvey: data = ', data)
   api.updateSurvey(data)
   .then(function (data) {
     ui.updateSurveySuccess(data)
@@ -51,33 +69,41 @@ const updateItem = function () {
 
 const populateUpdateForm = function (id) {
   const survey = findSurveyById(id)
-
-  $('#survey-id').val(survey.id)
-  $('#survey-title').val(survey.title)
-  $('#survey-q1').val(survey.questionOne)
+  console.log('>> survey.title is ', survey.title)
+  $('#surveyId').val(survey.id)
+  $('#surveyTitle').val(survey.title)
+  $('#surveyQ1').val(survey.question)
   onShowUpdateSurvey()
 }
 
 const findSurveyById = function (idToCompare) {
   let result
   let i
-  for (i in store.survey) {
-    const id = store.survey[i].id
-    if (id - idToCompare === 0) {
-      return store.survey[i]
+  for (i in store.surveys) {
+    const id = store.surveys[i].id
+    if (id === idToCompare) {
+      return store.surveys[i]
     }
   }
   result
 }
 
 const onShowUpdateSurvey = function () {
-  $('.update-a-survey').hide()
+  $('#updateSurvey').modal('show')
+}
+
+const onGetSurveys = (event) => {
+  event.preventDefault()
+  api.getSurveys()
+    .then(ui.getSurveysSuccess)
+    .catch(ui.getSurveysFailure)
 }
 
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
   $(document).on('click', '.update-survey', updateItem)
+  $(document).on('click', '.get-surveys', onGetSurveys)
 }
 
 module.exports = {

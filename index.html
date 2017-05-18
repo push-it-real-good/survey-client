@@ -161,9 +161,15 @@
   </button>
 </div>
 
-<div class="update-a-survey">
+<!-- <div class="update-a-survey">
   <button id="update-survey-button" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateSurvey">
-    Update Survey
+    Modify Survey
+  </button>
+</div> -->
+
+<div class="get-surveys">
+  <button id="get-survey-button" class="btn btn-primary btn-lg" type="button"  data-target="#">
+    Get Surveys
   </button>
 </div>
 
@@ -186,10 +192,10 @@
                   <span class="input-group-addon"  id="survey-title"></span>
                   <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1">
                 </div>
-                <!-- <div class="col-sm-10">
+                <div class="col-sm-10">
                     <span class="input-group-addon" id="survey-q1"></span>
-                  <input type="text" name="surveys[questionOne]" id="q1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
-                </div> -->
+                  <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
+                </div>
                 <!-- <div class="col-sm-10">
                   <span class="input-group-addon" id="survey-q2"></span>
                   <input type="text" name="surveys[questionTwo]" id="q2" class="form-control" placeholder="Question 2" aria-describedby="basic-addon1">
@@ -228,19 +234,19 @@
                   <div class="form-group">
                     <div class="col-sm-10">
                       <span class="input-group-addon"  id="survey-id"></span>
-                      <input type="text" name="surveys[id]" id="survey-id" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[id]" id="surveyId" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
                     </div>
                     <div class="col-sm-10">
                       <span class="input-group-addon"  id="survey-title"></span>
-                      <input type="text" name="surveys[title]" id="title" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[title]" id="surveyTitle" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1">
                     </div>
                     <div class="col-sm-10">
                         <span class="input-group-addon" id="survey-q1"></span>
-                      <input type="text" name="surveys[questionOne]" id="q1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[question]" id="surveyQ1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
                     </div>
                   </div>
                   <br>
-                  <button type="button" class="btn btn-primary" id= "update_survey">Update Survey</button>
+                  <button type="submit" class="btn btn-primary" id= "update_survey">Update Survey</button>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </fieldset>
                 <br>
@@ -250,6 +256,7 @@
           </div>
         </div>
 
+ <div class="list-group" id ="surveys-content"></div>
 
     </body>
 </html>
