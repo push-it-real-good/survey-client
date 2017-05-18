@@ -43,9 +43,9 @@
         <form id="sign-in">
           <div class="form-group blue-text">
             <label for="name"> Email</label>
-            <input type="text" name="credentials[email]" class="form-control" value="" autocomplete="off" placeholder="Enter Email" required="required" />
+            <input type="text" name="credentials[email]" class="form-control signInPaw" autocomplete="off" placeholder="Enter Email" required="required" />
            <label for="name">Password</label>
-           <input type="password" name="credentials[password]" class="form-control" value="" autocomplete="off" placeholder="Password" require="required" />
+           <input type="password" name="credentials[password]" class="form-control"  autocomplete="off" placeholder="Password" require="required" />
          </div>
          <div class="padding">
           <button type="submit" name="submit" value="SignIn" class="btn btn-primary btn-block"> Submit</button>
@@ -79,11 +79,11 @@
                  <form id="sign-up">
                    <div class="form-group blue-text">
                     <label for="name">Email</label>
-                    <input type="text" name="credentials[email]" class="form-control" value="" autocomplete="off" placeholder="Email" required />
+                    <input type="text" name="credentials[email]" class="form-control" autocomplete="off" placeholder="Email" required />
                     <label for="name">Password</label>
-                    <input id="password1" type="password" name="credentials[password]" class="form-control" value="" autocomplete="off" placeholder="Password" required />
+                    <input id="password1" type="password" name="credentials[password]" class="form-control" autocomplete="off" placeholder="Password" required />
                     <label for="name">Password Confirmation</label>
-                    <input id="password2" type="password" name="credentials[password_confirmation]" class="form-control" value="" autocomplete="off" placeholder="Confirm Password" required />
+                    <input id="password2" type="password" name="credentials[password_confirmation]" class="form-control" autocomplete="off" placeholder="Confirm Password" required />
                      <!-- Password Validation (5/18) -->
                     <span id="confirmMessage" class="confirmMessage"></span>
                    </div>
@@ -121,9 +121,9 @@
             <fieldset>
               <div class="form-group-pw blue-text">
                <label for="name">Old Password</label>
-               <input type="password" name="passwords[old]" class="form-control" value="" autocomplete="off" placeholder="Old Password" required />
+               <input type="password" name="passwords[old]" class="form-control" autocomplete="off" placeholder="Old Password" required />
                <label for="name">New Password</label>
-               <input type="password" name="passwords[new]" class="form-control" value="" autocomplete="off" placeholder="New Password" required />
+               <input type="password" name="passwords[new]" class="form-control" autocomplete="off" placeholder="New Password" required />
 
                <div class="padding"></div>
               <button id="changePasswordSubmit" type="submit" name="submit" value="Change Password" class="btn btn-primary btn-block">Change Password</button>
