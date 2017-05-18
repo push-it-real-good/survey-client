@@ -68,6 +68,5 @@ $(document).ready(function () {
     // Check if the URL parmeter is empty or not defined, display default content
   } else {
     $('#default-content').show()
-
   }
 })

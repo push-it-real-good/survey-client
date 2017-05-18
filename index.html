@@ -289,10 +289,29 @@
   </div>
   <!-- Dynamic Section 3 -->
   <!-- respondents handlebars -->
-  <div class="container col-md-12 ">
+  <div class="container col-md-12">
+    <h1 id="default-display-text" text="surveys">Survey</h1>
     <ol id="respondents" class="dynamic-content">
     </ol>
+    <table class="table table-sm" id="survey-list-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Question</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td id="survey_id"></td>
+            <td id="survey_question"></td>
+            <td id="survey_owner"></td>
+          </tr>
+      </tbody>
+    </table>
   </div>
+
 <!-- End of Dynamic Content -->
 
     </body>

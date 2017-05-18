@@ -101,13 +101,20 @@ const getOneDynamicSurveySuccess = (data) => {
   console.log('_owner:', data.survey._owner)
   console.log('length:', data.survey.length)
   console.log('question:', data.survey.question)
-  // const showSurveysHtml = showSurveysTemplate({ survey: data.survey })
-  const showSurveysHtml = showSurveysTemplate(data.survey)
+  // const showSurveysHtml = showSurveysTemplate({ surveys: data.survey })
+  // const showSurveysHtml = showSurveysTemplate(data.survey)
   // debugger;
-  $('.dynamic-content').html(showSurveysHtml) // .order
+  // $('.dynamic-content').html(showSurveysHtml) // .order
+// hide handlebars icons
+  // $('.glyphicon').hide()
+// show survey id in browser
+  $('#default-display-text').text(data.survey.title)
+  $('#survey_id').html(data.survey.id)
+  $('#survey_question').text(data.survey.question)
+  $('#survey_owner').text(data.survey._owner)
+
+  // $('#spacer1').text('List')
   // $('.errors-create-item').empty()
-  $('.glyphicon').hide()
-  $('#spacer1').text('List')
 }
 
 const getOneDynamicSurveyFailure = (error) => {
