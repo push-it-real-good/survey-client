@@ -1,5 +1,38 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+
+## Project Links
+
+#### Back-End
+[ProjectApiDeployed](https://floating-savannah-15725.herokuapp.com/)
+[ProjectApiRepo](https://github.com/push-it-real-good/survey-express-api)
+
+#### Front-End
+[ProjectClientDeployed](https://push-it-real-good.github.io/survey-client/)
+[ProjectClientRepo](https://github.com/push-it-real-good/survey-client)
+
+## ERD
+
+<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
+
+## Wireframe
+
+![survey-wireframe](https://cloud.githubusercontent.com/assets/26236941/26161204/390c7648-3af1-11e7-88c3-dbf4c6476183.jpg)
+
+## User Stories
+
+1. As a surveyor, I want to sign up, so that I can create surveys.
+2. As a surveyor, I want to sign in, so that I can create surveys.
+3. As a surveyor, I want to change a password so that I can protect my identity.
+4. As a surveyor, I want to sign out, so that I can safely log out and no one can see my survey data.
+5. As a surveyor, I want to create a survey and generate a link to each survey.
+6. As a surveyor, I want to update existing surveys so that I can modify them.
+7. As a surveyor, I want to delete a survey if it is no longer needed.
+8. As a surveyor, I want to be able to view all results of a survey in a dashboard.
+9. As a respondent, I want to be able to fill out the survey.
+10.As a respondent, I want to be able to submit the survey.
+
+
 # browser-template
 
 A template for starting front-end projects. Webpack for `require` system, build
