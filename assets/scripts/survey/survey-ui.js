@@ -19,11 +19,12 @@ const createSurveyFailure = (error) => {
 }
 
 const updateSurveySuccess = (data) => {
-  store.survey = data.survey
+  // store.survey = data.survey
   console.log('updateSurveySuccess')
 }
 
 const updateSurveyFailure = (error) => {
+  console.log('updateSurveySuccess, error = ', error)
   console.error(error)
 }
 
