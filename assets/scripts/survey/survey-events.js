@@ -99,16 +99,16 @@ const onGetSurveys = (event) => {
     .catch(ui.getSurveysFailure)
 }
 
-const onGetSurveys = function (event) {
-  event.preventDefault()
-  console.log('onGetSurveys')
-  api.getSurveys()
-  .then(function (data) {
-    ui.getSurveysSuccess(data)
-  })
-  // .then(ui.getSurveysSuccess)
-  .catch(ui.getSurveysFailure)
-}
+// const onGetSurveys = function (event) {
+//   event.preventDefault()
+//   console.log('onGetSurveys')
+//   api.getSurveys()
+//   .then(function (data) {
+//     ui.getSurveysSuccess(data)
+//   })
+//   // .then(ui.getSurveysSuccess)
+//   .catch(ui.getSurveysFailure)
+// }
 
 function getParameterByName () {
   // print url
