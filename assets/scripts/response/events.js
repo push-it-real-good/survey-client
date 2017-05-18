@@ -20,8 +20,31 @@ const onCreateResponse = function (event) {
   // console.log('++++ onCreateResponse(), token = ', store.user.token)
 }
 
+const onGetResponses = function (event) {
+  event.preventDefault()
+  console.log('woah')
+  console.log('this:', this)
+  console.log('event:', event)
+  // const string = this.id
+  // const data = this
+  let string = {}
+  string = { // should this be a constructor function to have one for each play?
+    'survey_id': this.id
+  }
+  console.log('string ', string)
+
+  api.getResponses(string)
+    // .then(ui.getResponsesSuccess)
+    // .catch(ui.getResponsesFailure)
+  .then(function (data) {
+    ui.getResponsesSuccess(data)
+  })
+  .catch(ui.getResponsesFailure)
+}
+
 const addHandlers = () => {
   $('#create-response').on('submit', onCreateResponse)
+  $(document).on('click', '.dashboard-button', onGetResponses)
 }
 
 module.exports = {
