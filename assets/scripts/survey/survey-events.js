@@ -130,11 +130,21 @@ function getParameterByName () {
 // Give the parameter a variable name, to be passed to index.js
 const dynamicContent = getParameterByName()
 
+const deleteItem = function () {
+  event.preventDefault()
+  const id = $(this).attr('data-id')
+  console.log('deleteItem() : id is: ' + id)
+  api.deleteSurvey(id)
+    .done(ui.deleteSurveySuccess)
+    .fail(ui.deleteSurveyFailure)
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
   $(document).on('click', '.update-survey', updateItem)
   $(document).on('click', '.get-surveys', onGetSurveys)
+  $(document).on('click', '.remove-survey', deleteItem)
 }
 
 module.exports = {

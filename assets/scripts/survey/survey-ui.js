@@ -114,6 +114,16 @@ const getOneDynamicSurveyFailure = (error) => {
   console.error(error)
 }
 
+const deleteSurveySuccess = (data) => {
+  // store.survey = data.survey
+  console.log('deleteSurveySuccess')
+}
+
+const deleteSurveyFailure = (error) => {
+  console.log('deleteSurveySuccess, error = ', error)
+  console.error(error)
+}
+
 module.exports = {
   clearSurveyModal,
   createSurveySuccess,
@@ -125,5 +135,7 @@ module.exports = {
   getDynamicSurveysSuccess,
   getDynamicSurveysFailure,
   getOneDynamicSurveySuccess,
-  getOneDynamicSurveyFailure
+  getOneDynamicSurveyFailure,
+  deleteSurveySuccess,
+  deleteSurveyFailure
 }
