@@ -43,12 +43,6 @@ const getSurveysSuccess = (data) => {
   // $('.errors-create-item').empty()
   // $('#create-item').show()
   // $('#spacer1').text('List')
-  // console.log(data.new_items)
-  // console.log(data.new_items[0])
-  // console.log(data.new_items[0].id)
-  // console.log(data.new_items[0].name)
-  // console.log(data.new_items[0].user)
-  // console.log(data.new_items[0].user_id)
 }
 
 const getSurveysFailure = (error) => {
