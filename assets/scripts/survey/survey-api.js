@@ -58,6 +58,26 @@ const deleteSurvey = (id) => {
     }
   })
 }
+//
+// const getResponses = function (dc) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/' + dc,
+//     method: 'GET',
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+//   })
+// }
+
+const getDynamicSurveys = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys',
+    method: 'GET' // ,
+    // headers: {
+    //   Authorization: 'Token token=' + 'abc'
+    // }
+  })
+}
 
 // Exported since used in other code like events.js
 module.exports = {
@@ -65,5 +85,7 @@ module.exports = {
   getSurveys,
   updateSurvey,
   deleteSurvey,
-  getOneSurvey
+  getOneSurvey,
+  // getResponses,
+  getDynamicSurveys
 }

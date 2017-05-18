@@ -85,6 +85,19 @@ const onGetSurveys = function (event) {
   .catch(ui.getSurveysFailure)
 }
 
+// Parse the URL parameter
+function getParameterByName (name, url) {
+  if (!url) url = window.location.href
+  name = name.replace(/[\[\]]/g, '\\$&')
+  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url)
+  if (!results) return null
+  if (!results[2]) return ''
+  return decodeURIComponent(results[2].replace(/\+/g, ' '))
+}
+// Give the parameter a variable name
+const dynamicContent = getParameterByName('dc')
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
@@ -95,5 +108,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  dynamicContent
 }
