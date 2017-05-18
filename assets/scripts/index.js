@@ -38,7 +38,6 @@ $(() => {
   $('.create-a-survey').hide()
   $('.update-a-survey').hide()
   $('.get-surveys').hide()
-  // surveyEvents.dynamicContent()
 })
 
 // query parameters from URL
@@ -69,4 +68,5 @@ $(document).ready(function () {
   } else {
     $('#default-content').show()
   }
+
 })
