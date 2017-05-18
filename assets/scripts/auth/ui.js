@@ -33,6 +33,9 @@ const signInSuccess = (data) => {
   $('.create-a-survey').show()
   $('.update-a-survey').show()
   $('.get-surveys').show()
+  $('#survey-list-table').show()
+  $('#get-survey-button').show()
+  $('#add-survey-button').show()
 }
 
 const signInFailure = (error) => {
@@ -51,8 +54,11 @@ const signOutSuccess = () => {
   $('#signUpModal').hide()
   $('#signUpModal').trigger('reset')
   $('#signInModal').trigger('reset')
-  $('.form-control').val('')
   $('#signInModal').show()
+  $('#survey-list-table').hide()
+  $('#get-survey-button').hide()
+  $('#add-survey-button').hide()
+  $('.list-group').empty()
 }
 
 const signOutFailure = (error) => {

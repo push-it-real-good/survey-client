@@ -8,10 +8,11 @@ const surveyEvents = require('./survey/survey-events.js')
 const api = require('./survey/survey-api')
 const ui = require('./survey/survey-ui')
 
+// response:
+const responseEvents = require('./response/events')
+
 $(() => {
   setAPIOrigin(location, config)
-  $('#password1, #password2').keyup(authEvents.checkPass)
-
   $('#add-task-modal').on('hidden.bs.modal', function () {
     $(this).find('input,textarea,select').val('').end()
   })
@@ -33,6 +34,7 @@ $(() => {
 
   authEvents.addHandlers()
   surveyEvents.addHandlers()
+  responseEvents.addHandlers()
   $('.form-control').val('')  // This clears out all the form input fields when the document is first loaded
   $('#signUpModal').hide()
   $('.nav-btns').hide()

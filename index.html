@@ -43,9 +43,9 @@
         <form id="sign-in">
           <div class="form-group blue-text">
             <label for="name"> Email</label>
-            <input type="text" name="credentials[email]" class="form-control" value="" autocomplete="off" placeholder="Enter Email" required="required" />
+            <input type="text" name="credentials[email]" class="form-control signInPaw" autocomplete="off" placeholder="Enter Email" required="required" />
            <label for="name">Password</label>
-           <input type="password" name="credentials[password]" class="form-control" value="" autocomplete="off" placeholder="Password" require="required" />
+           <input type="password" name="credentials[password]" class="form-control"  autocomplete="off" placeholder="Password" require="required" />
          </div>
          <div class="padding">
           <button type="submit" name="submit" value="SignIn" class="btn btn-primary btn-block"> Submit</button>
@@ -79,11 +79,11 @@
                  <form id="sign-up">
                    <div class="form-group blue-text">
                     <label for="name">Email</label>
-                    <input type="text" name="credentials[email]" class="form-control" value="" autocomplete="off" placeholder="Email" required />
+                    <input type="text" name="credentials[email]" class="form-control" autocomplete="off" placeholder="Email" required />
                     <label for="name">Password</label>
-                    <input id="password1" type="password" name="credentials[password]" class="form-control" value="" autocomplete="off" placeholder="Password" required />
+                    <input id="password1" type="password" name="credentials[password]" class="form-control" autocomplete="off" placeholder="Password" required />
                     <label for="name">Password Confirmation</label>
-                    <input id="password2" type="password" name="credentials[password_confirmation]" class="form-control" value="" autocomplete="off" placeholder="Confirm Password" required />
+                    <input id="password2" type="password" name="credentials[password_confirmation]" class="form-control" autocomplete="off" placeholder="Confirm Password" required />
                      <!-- Password Validation (5/18) -->
                     <span id="confirmMessage" class="confirmMessage"></span>
                    </div>
@@ -121,9 +121,9 @@
             <fieldset>
               <div class="form-group-pw blue-text">
                <label for="name">Old Password</label>
-               <input type="password" name="passwords[old]" class="form-control" value="" autocomplete="off" placeholder="Old Password" required />
+               <input type="password" name="passwords[old]" class="form-control" autocomplete="off" placeholder="Old Password" required />
                <label for="name">New Password</label>
-               <input type="password" name="passwords[new]" class="form-control" value="" autocomplete="off" placeholder="New Password" required />
+               <input type="password" name="passwords[new]" class="form-control" autocomplete="off" placeholder="New Password" required />
 
                <div class="padding"></div>
               <button id="changePasswordSubmit" type="submit" name="submit" value="Change Password" class="btn btn-primary btn-block">Change Password</button>
@@ -279,9 +279,9 @@
   </div>
   <!-- Dynamic Section 3 -->
   <!-- respondents handlebars -->
-  <div class="container col-md-12 dynamic-content">
+  <div id="respondents" class="container col-md-12 dynamic-content">
     <h1 id="default-display-text" text="surveys">Survey</h1>
-    <ol id="respondents" class="dynamic-content">
+    <ol class="dynamic-content">
     </ol>
     <table class="table table-sm" id="survey-list-table">
       <thead>
@@ -289,14 +289,44 @@
           <th>ID</th>
           <th>Question</th>
           <th>Owner</th>
+          <th>Response</th>
+          <th></th> <!-- for submit button -->
         </tr>
       </thead>
 
       <tbody>
           <tr>
-            <td id="survey_id"></td>
+            <td class="survey_id"></td>
             <td id="survey_question"></td>
             <td id="survey_owner"></td>
+          <!-- Create Response -->
+            <td id="survey_response">
+              <div class="input-group">
+                <form id="create-response">
+                  <fieldset>
+                      <input type="text" name="response[survey_id]" id="survey_id" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
+                    <!-- <div type="text" id="survey_id" name="response[survey_id]"></td> -->
+                    <input type="text" name="response[text]" id="responseq1" class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
+                    <!-- <button type="submit" class="btn btn-primary" id= "create_response">Submit Response</button> -->
+                    <input type="submit" class="btn btn-primary" id= "create_response">
+
+                    <!-- <input type="text" id="new-item-input" class="new-item-class" placeholder="new list item" required>
+                    <input type="submit" value="Create / Add Item!" id="createItemsButton" class="new-item-class"> -->
+
+                    <div class="errors-create-response" > </div>
+                  </fieldset>
+                </form>
+              </div>
+<!-- <div class="input-group">
+  <form id="create-item">
+    <fieldset>
+      <input type="text" id="new-item-input" class="new-item-class" placeholder="new list item" required>
+      <input type="submit" value="Create / Add Item!" id="createItemsButton" class="new-item-class">
+    </fieldset>
+  </form>
+</div> -->
+            </td>
+          <!-- End of Create Response -->
           </tr>
       </tbody>
     </table>
