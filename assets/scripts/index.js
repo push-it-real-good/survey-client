@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('#apples').show()
   } else if (dc[0] === 'oranges') { // Check if the URL parameter is oranges
     $('#oranges').show()
-  } else if (dc[0] === 'respondents') { // Check if the URL parameter is bananas
+  } else if (dc[0] === 'respondents' && dc[1] !== undefined) { // Check if the URL parameter is bananas
     $('#respondents').show()
     api.getOneDynamicSurvey(dc[1])
       // .then(function (data) {

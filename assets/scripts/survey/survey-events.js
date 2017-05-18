@@ -103,12 +103,21 @@ const onGetSurveys = function (event) {
 // }
 
 function getParameterByName () {
-  const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
-    return e.split('=')[1]
-  })
-  console.log('array: ', arr)
-  console.log('survey_id: ', arr[1])
-  return arr
+  // print url
+  // console.log(window.location.href)
+  // true or false, there are parameters as indicated by a "?"
+  console.log(window.location.href.split('?')[1] === undefined)
+  if (window.location.href.split('?')[1] === undefined) {
+    return 'no parameters, will load Surveyor Page'
+  } else {
+    const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
+      return e.split('=')[1]
+    })
+    console.log('array: ', arr)
+    console.log('survey_id: ', arr[1])
+    console.log('parameters, will load Respondent Page')
+    return arr
+  }
 }
 // Give the parameter a variable name, to be passed to index.js
 const dynamicContent = getParameterByName()
