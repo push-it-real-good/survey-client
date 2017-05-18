@@ -74,10 +74,24 @@ const onShowUpdateSurvey = function () {
   $('.update-a-survey').hide()
 }
 
+const onGetSurveys = function (event) {
+  event.preventDefault()
+  console.log('onGetSurveys')
+  api.getSurveys()
+  .then(function (data) {
+    ui.getSurveysSuccess(data)
+  })
+  // .then(ui.getSurveysSuccess)
+  .catch(ui.getSurveysFailure)
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
+  $('#update-survey').on('submit', onUpdateSurvey)
   $(document).on('click', '.update-survey', updateItem)
+  // get-surveys-button
+  $('#get-surveys-button').on('click', onGetSurveys)
 }
 
 module.exports = {

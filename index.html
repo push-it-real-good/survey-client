@@ -14,6 +14,9 @@
 
     <body class="container">
 
+<!-- Start the default content -->
+<div id="default-content" class="dynamic-content">
+
       <div id="jumbotron-top" class="jumbotron jumbotron-fluid  beforesignin">
         <h2 id="title-message" class="title_message ">Survey</h2>
         <div class="jumbotron-msg container push-spaces">
@@ -250,6 +253,80 @@
           </div>
         </div>
 
+<!-- Get / READ Surveys -->
+  <!-- <button id="getItemsButton" class="btn btn-default">Load your list!</button> -->
+  <div class="get-surveys">
+    <button id="get-surveys-button" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#getSurveys">
+      Get Survey
+    </button>
+
+  <!-- space -->
+    <h1 class="spacer " id="spacer0"> </h1>
+    <h1 id="get-surveys-header" text="surveys">SURVEYS</h1>
+
+  <!-- handlebars -->
+    <div class="container col-md-12 ">
+      <ol id="content" class="content">
+      </ol>
+    </div>
+  </div>
+<!-- End of Get / READ Surveys -->
+
+</div>
+<!-- End of default-content -->
+
+
+<!-- Dynamic Content -->
+  <!-- Dynamic Section 1 -->
+  <div id="apples" class="dynamic-content">
+    I like apples
+  </div>
+  <!-- Dynamic Section 2 -->
+  <div id="oranges" class="dynamic-content">
+    I like oranges
+  </div>
+  <!-- Dynamic Section 3 -->
+  <div id="bananas" class="dynamic-content">
+    I like bananas
+  </div>
+
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript">
+
+    	// Parse the URL parameter
+    	function getParameterByName(name, url) {
+    	    if (!url) url = window.location.href;
+    	    name = name.replace(/[\[\]]/g, "\\$&");
+    	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    	        results = regex.exec(url);
+    	    if (!results) return null;
+    	    if (!results[2]) return '';
+    	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+    	}
+    	// Give the parameter a variable name
+    	var dynamicContent = getParameterByName('dc');
+
+    	 $(document).ready(function() {
+
+    		// Check if the URL parameter is apples
+    		if (dynamicContent == 'apples') {
+    			$('#apples').show();
+    		}
+    		// Check if the URL parameter is oranges
+    		else if (dynamicContent == 'oranges') {
+    			$('#oranges').show();
+    		}
+    		// Check if the URL parameter is bananas
+    		else if (dynamicContent == 'bananas') {
+    			$('#bananas').show();
+    		}
+    		// Check if the URL parmeter is empty or not defined, display default content
+    		else {
+    			$('#default-content').show();
+    		}
+    	});
+    </script>
+<!-- End of Dynamic Content -->
 
     </body>
 </html>

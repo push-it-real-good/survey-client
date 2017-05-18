@@ -26,10 +26,7 @@ $(() => {
     $('#signUpError').hide()
     $('#signUpSuccess').hide()
   })
-})
 
-// on document ready
-$(() => {
   authEvents.addHandlers()
   surveyEvents.addHandlers()
   $('.form-control').val('')  // This clears out all the form input fields when the document is first loaded
@@ -37,4 +34,5 @@ $(() => {
   $('.nav-btns').hide()
   $('.create-a-survey').hide()
   $('.update-a-survey').hide()
+  $('.get-surveys').hide()
 })
