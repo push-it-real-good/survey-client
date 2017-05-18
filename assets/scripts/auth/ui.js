@@ -54,7 +54,6 @@ const signOutSuccess = () => {
   $('#signUpModal').hide()
   $('#signUpModal').trigger('reset')
   $('#signInModal').trigger('reset')
-  $('.form-control').val('')
   $('#signInModal').show()
   $('#survey-list-table').hide()
   $('#get-survey-button').hide()
