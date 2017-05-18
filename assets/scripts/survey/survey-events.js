@@ -86,17 +86,32 @@ const onGetSurveys = function (event) {
 }
 
 // Parse the URL parameter
-function getParameterByName (name, url) {
-  if (!url) url = window.location.href
-  name = name.replace(/[\[\]]/g, '\\$&')
-  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url)
-  if (!results) return null
-  if (!results[2]) return ''
-  return decodeURIComponent(results[2].replace(/\+/g, ' '))
+// function getParameterByName (name, url) {
+//   if (!url) url = window.location.href
+//   name = name.replace(/[\[\]]/g, '\\$&')
+//   const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+//   results = regex.exec(url)
+//   console.log('results: ', results)
+//   const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
+//     return e.split('=')[1]
+//   })
+//   console.log('array: ', arr)
+//   console.log('survey_id: ', arr[1])
+//   if (!results) return null
+//   if (!results[2]) return ''
+//   return decodeURIComponent(results[2].replace(/\+/g, ' '))
+// }
+
+function getParameterByName () {
+  const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
+    return e.split('=')[1]
+  })
+  console.log('array: ', arr)
+  console.log('survey_id: ', arr[1])
+  return arr
 }
-// Give the parameter a variable name
-const dynamicContent = getParameterByName('dc')
+// Give the parameter a variable name, to be passed to index.js
+const dynamicContent = getParameterByName()
 
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)

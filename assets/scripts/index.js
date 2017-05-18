@@ -46,13 +46,13 @@ $(document).ready(function () {
 // Check if the URL parameter is apples
   const dc = surveyEvents.dynamicContent
   console.log(dc)
-  if (dc === 'apples') {
+  if (dc[0] === 'apples') {
     $('#apples').show()
-  } else if (dc === 'oranges') { // Check if the URL parameter is oranges
+  } else if (dc[0] === 'oranges') { // Check if the URL parameter is oranges
     $('#oranges').show()
-  } else if (dc === 'respondents') { // Check if the URL parameter is bananas
+  } else if (dc[0] === 'respondents') { // Check if the URL parameter is bananas
     $('#respondents').show()
-    api.getOneDynamicSurvey()
+    api.getOneDynamicSurvey(dc[1])
       // .then(function (data) {
       //   ui.getDynamicSurveysSuccess(data)
       // })

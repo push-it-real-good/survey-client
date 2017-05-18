@@ -79,13 +79,13 @@ const getDynamicSurveys = function () {
   })
 }
 
-const getOneDynamicSurvey = (data) => {
+const getOneDynamicSurvey = (surveyId) => {
   return $.ajax({
-    url: config.apiOrigin + '/surveys/' + '591cf7701bd11952126a6752',
-    method: 'GET',
-    data: data // ,
+    url: config.apiOrigin + '/surveys/' + surveyId,
+    method: 'GET' // ,
+    // data: surveyId // ,
     // headers: {
-    //   Authorization: 'Token token=' + store.user.token
+    //   Authorization: 'Token token=' + 'abc'
     // }
   })
 }
