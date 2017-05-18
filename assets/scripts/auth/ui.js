@@ -29,6 +29,7 @@ const signInSuccess = (data) => {
   $('#ChangePasswordSuccess').hide()
   $('#change-password').trigger('reset')
   $('.nav-btns').show()
+// show main page buttons
   $('.create-a-survey').show()
   $('.update-a-survey').show()
   $('.get-surveys').show()
