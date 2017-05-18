@@ -16,17 +16,19 @@ const createResponse = (data) => {
   })
 }
 
-const getResponses = function () {
+const getResponses = function (data) {
+  console.log('data,', data)
   console.log('getResponses(), token = ', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/responses',
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  //
-//  do we need to add in data for the survey_id???
-  //
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // },
+    data: data
+    // data '{
+    //     "survey_id": "'"${SURVEYID}"'"
+    // }'
   })
 }
 

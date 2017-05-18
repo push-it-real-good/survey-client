@@ -12,6 +12,7 @@ const createResponseFailure = (error) => {
 }
 
 const getResponsesSuccess = (data) => {
+  console.log('data after api call', data)
   const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
   store.responses = data.responses
   console.log('>>>>> store.responses = ', store.responses)
