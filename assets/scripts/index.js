@@ -10,6 +10,7 @@ const ui = require('./survey/survey-ui')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('#password1, #password2').keyup(authEvents.checkPass)
 
   $('#add-task-modal').on('hidden.bs.modal', function () {
     $(this).find('input,textarea,select').val('').end()
