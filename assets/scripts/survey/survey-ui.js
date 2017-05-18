@@ -11,7 +11,7 @@ const clearSurveyModal = function () {
 }
 
 const createSurveySuccess = (data) => {
-  store.user = data.user
+  console.log('createSurveySuccess')
 }
 
 const createSurveyFailure = (error) => {
@@ -19,8 +19,8 @@ const createSurveyFailure = (error) => {
 }
 
 const updateSurveySuccess = (data) => {
-  // store.user = data.user
-  console.log('SUCCESS AT UPDATING THE SURVEY!')
+  store.survey = data.survey
+  console.log('updateSurveySuccess')
 }
 
 const updateSurveyFailure = (error) => {

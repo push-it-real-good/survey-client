@@ -37,4 +37,5 @@ $(() => {
   $('.nav-btns').hide()
   $('.create-a-survey').hide()
   $('.update-a-survey').hide()
+  $('.get-surveys').hide()
 })

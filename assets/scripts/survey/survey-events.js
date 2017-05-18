@@ -9,7 +9,6 @@ const store = require('../store')
 const onCreateSurvey = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('onCreateSurvey: data = ', data)
   api.createSurvey(data)
   .then(function (data) {
     ui.createSurveySuccess(data)
@@ -22,6 +21,7 @@ const onCreateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
+  console.log('++++ onCreateSurvey(), token = ', store.user.token)
 }
 
 // const onUpdateSurvey = function (event) {
@@ -45,19 +45,19 @@ const onCreateSurvey = function (event) {
 const onUpdateSurvey = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('>>>>>>>>onUpdateSurvey: data = ', data)
+  // console.log('>>>>>>>>onUpdateSurvey: data = ', data)
   api.updateSurvey(data)
   .then(function (data) {
     ui.updateSurveySuccess(data)
-    // $('#updateSurvey').modal('hide')
+    $('#updateSurvey').modal('hide')
   })
   .catch(ui.updateSurveyFailure)
   // Clear out existing text in modal text boxes when there is a failure
   // source: http://stackoverflow.com/questions/31022950/how-clear-bootstrap-modal-on-hide
-  // $('#updateSurvey').on('hidden.bs.modal', function () {
-  //   $(this).find('input,textarea,select').val('').end()
-  // })
-  // ui.clearSurveyModal()
+  $('#updateSurvey').on('hidden.bs.modal', function () {
+    $(this).find('input,textarea,select').val('').end()
+  })
+  ui.clearSurveyModal()
 }
 
 const updateItem = function () {

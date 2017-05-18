@@ -31,6 +31,7 @@ const signInSuccess = (data) => {
   $('.nav-btns').show()
   $('.create-a-survey').show()
   $('.update-a-survey').show()
+  $('.get-surveys').show()
 }
 
 const signInFailure = (error) => {
