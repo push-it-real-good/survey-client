@@ -279,9 +279,9 @@
   </div>
   <!-- Dynamic Section 3 -->
   <!-- respondents handlebars -->
-  <div class="container col-md-12 dynamic-content">
+  <div id="respondents" class="container col-md-12 dynamic-content">
     <h1 id="default-display-text" text="surveys">Survey</h1>
-    <ol id="respondents" class="dynamic-content">
+    <ol class="dynamic-content">
     </ol>
     <table class="table table-sm" id="survey-list-table">
       <thead>
@@ -289,6 +289,8 @@
           <th>ID</th>
           <th>Question</th>
           <th>Owner</th>
+          <th>Response</th>
+          <th></th> <!-- for submit button -->
         </tr>
       </thead>
 
@@ -297,6 +299,23 @@
             <td id="survey_id"></td>
             <td id="survey_question"></td>
             <td id="survey_owner"></td>
+          <!-- Create Response -->
+            <td id="survey_response">
+              <div id="createResponse" role="dialog">
+                <form id="create-response">
+                  <fieldset>
+                    <div class="input-group">
+                      <div class="col-sm-10">
+                        <input type="text" name="response[question]" id="responseq1" class="form-control" placeholder="Response" aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary" id= "create_response">Submit Response</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <br>
+                </form>
+              </div>
+            </td>
+          <!-- End of Create Response -->
           </tr>
       </tbody>
     </table>
