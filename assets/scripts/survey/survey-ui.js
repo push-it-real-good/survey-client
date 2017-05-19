@@ -83,32 +83,15 @@ const getDynamicSurveysFailure = (error) => {
 
 const getOneDynamicSurveySuccess = (data) => {
   // store.user = data.user
-  console.log(data)
-  console.log(data.survey)
-  // console.log(data.surveys[0])
-  console.log('title:', data.survey.title)
-  console.log('id:', data.survey.id)
-  console.log('url:', data.survey.url)
-  console.log('_owner:', data.survey._owner)
-  console.log('length:', data.survey.length)
-  console.log('question:', data.survey.question)
-// handlebars data
-  // const showSurveysHtml = showSurveysTemplate({ surveys: data.survey })
-  // const showSurveysHtml = showSurveysTemplate(data.survey)
-  // $('.dynamic-content').html(showSurveysHtml) // .order
-  // debugger;
-
-// hide handlebars icons
-  // $('.glyphicon').hide()
-// show survey id in browser
+  // console.log(data)
+  // console.log(data.survey)
   $('#default-display-text').text(data.survey.title)
-  $('#survey_id').html(data.survey.id)
-  $('#survey_id').val(data.survey.id)
+  // $('#survey_id').html(data.survey.id)
+  // $('#survey_id').val(data.survey.id)
+  $('#create-response').attr('data-id', data.survey.id)
+  console.log('innerHTML: ', $('#create-response').attr('data-id'))
   $('#survey_question').text(data.survey.question)
-  $('#survey_owner').text(data.survey._owner)
-
-  // $('#spacer1').text('List')
-  // $('.errors-create-item').empty()
+  // $('#survey_owner').text(data.survey._owner)
 }
 
 const getOneDynamicSurveyFailure = (error) => {
