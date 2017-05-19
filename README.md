@@ -3,21 +3,23 @@
 
 ## Project Links
 
-#### Back-End
+#### Back-End Deplpyed
 [ProjectApiDeployed](https://floating-savannah-15725.herokuapp.com/)
+#### Back-End Repo
 [ProjectApiRepo](https://github.com/push-it-real-good/survey-express-api)
 
-#### Front-End
+#### Front-End Deployed
 [ProjectClientDeployed](https://push-it-real-good.github.io/survey-client/)
+#### Front-End Repo
 [ProjectClientRepo](https://github.com/push-it-real-good/survey-client)
 
 ## ERD
 
-<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26161116/fdf6d788-3af0-11e7-925a-7e4e4dcc3f6f.png">
+<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26231174/af1471b2-3c1b-11e7-91b7-a0f69030306f.png">
 
 ## Wireframe
 
-![survey-wireframe](https://cloud.githubusercontent.com/assets/26236941/26161204/390c7648-3af1-11e7-88c3-dbf4c6476183.jpg)
+![wireframe](https://cloud.githubusercontent.com/assets/26236941/26231176/b2b47f6a-3c1b-11e7-8854-592fa0bf78f5.png)
 
 ## User Stories
 
