@@ -13,6 +13,7 @@ const responseEvents = require('./response/events')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('.form-control').val('')
   $('#add-task-modal').on('hidden.bs.modal', function () {
     $(this).find('input,textarea,select').val('').end()
   })

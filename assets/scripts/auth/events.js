@@ -33,6 +33,7 @@ const onSignUpClick = function (event) {
     }
   }
 
+  $('.form-control').val('')
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#signInModal').hide()
@@ -40,6 +41,7 @@ const onSignUpClick = function (event) {
 
 const onSignInClick = function (event) {
   $('#signUpModal').hide()
+  $('.form-control').val('')
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
   $('#signInModal').show()
