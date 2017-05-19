@@ -15,11 +15,11 @@
 
 ## ERD
 
-<img width="799" alt="survey-erd" src="https://cloud.githubusercontent.com/assets/26236941/26231452/46391b96-3c1d-11e7-8935-76639a88c23d.png">
+<img width="799" alt="survey-erd" src="https://cloud.githubusercontent.com/assets/26236941/26231974/bb4ca918-3c20-11e7-844a-637122c5ce98.png">
 
 ## Wireframe
 
-![wireframe](https://cloud.githubusercontent.com/assets/26236941/26231176/b2b47f6a-3c1b-11e7-8854-592fa0bf78f5.png)
+![wireframe](https://cloud.githubusercontent.com/assets/26236941/26231973/b82e73ba-3c20-11e7-95ce-a75672ef1642.png)
 
 ## User Stories
 
