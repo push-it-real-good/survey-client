@@ -2,12 +2,16 @@
 
 const store = require('../store')
 const showSurveysTemplate = require('../templates/survey.handlebars')
+const api = require('./survey-api')
+
+const getSurveys = (event) => {
+  api.getSurveys()
+    .then(getSurveysSuccess)
+    .catch(getSurveysFailure)
+}
 
 const clearSurveyModal = function () {
   $('#title').val('')
-  // $('#q1').val('')
-  // $('#q2').val('')
-  // $('#q3').val('')
 }
 
 const createSurveySuccess = (data) => {
@@ -21,6 +25,7 @@ const createSurveyFailure = (error) => {
 const updateSurveySuccess = (data) => {
   // store.survey = data.survey
   console.log('updateSurveySuccess')
+  getSurveys()
 }
 
 const updateSurveyFailure = (error) => {
@@ -101,6 +106,7 @@ const getOneDynamicSurveyFailure = (error) => {
 const deleteSurveySuccess = (data) => {
   // store.survey = data.survey
   console.log('deleteSurveySuccess')
+  getSurveys()
 }
 
 const deleteSurveyFailure = (error) => {
@@ -121,5 +127,6 @@ module.exports = {
   getOneDynamicSurveySuccess,
   getOneDynamicSurveyFailure,
   deleteSurveySuccess,
-  deleteSurveyFailure
+  deleteSurveyFailure,
+  getSurveys
 }

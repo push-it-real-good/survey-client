@@ -21,26 +21,9 @@ const onCreateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
-  console.log('++++ onCreateSurvey(), token = ', store.user.token)
+  onGetSurveys()
+  // console.log('++++ onCreateSurvey(), token = ', store.user.token)
 }
-
-// const onUpdateSurvey = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(this)
-//   console.log('>>>>>>>>onUpdateSurvey: data = ', data)
-//   api.updateSurvey(data)
-//   .then(function (data) {
-//     ui.updateSurveySuccess(data)
-//     $('#updateSurvey').modal('hide')
-//   })
-//   .catch(ui.updateSurveyFailure)
-//   // Clear out existing text in modal text boxes when there is a failure
-//   // source: http://stackoverflow.com/questions/31022950/how-clear-bootstrap-modal-on-hide
-//   $('#updateSurvey').on('hidden.bs.modal', function () {
-//     $(this).find('input,textarea,select').val('').end()
-//   })
-//   ui.clearSurveyModal()
-// }
 
 const onUpdateSurvey = function (event) {
   event.preventDefault()
@@ -58,6 +41,7 @@ const onUpdateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
+  onGetSurveys()
 }
 
 const updateItem = function () {
@@ -93,22 +77,10 @@ const onShowUpdateSurvey = function () {
 }
 
 const onGetSurveys = (event) => {
-  event.preventDefault()
   api.getSurveys()
     .then(ui.getSurveysSuccess)
     .catch(ui.getSurveysFailure)
 }
-
-// const onGetSurveys = function (event) {
-//   event.preventDefault()
-//   console.log('onGetSurveys')
-//   api.getSurveys()
-//   .then(function (data) {
-//     ui.getSurveysSuccess(data)
-//   })
-//   // .then(ui.getSurveysSuccess)
-//   .catch(ui.getSurveysFailure)
-// }
 
 function getParameterByName () {
   // print url
@@ -137,6 +109,7 @@ const deleteItem = function () {
   api.deleteSurvey(id)
     .done(ui.deleteSurveySuccess)
     .fail(ui.deleteSurveyFailure)
+  onGetSurveys()
 }
 
 const addHandlers = () => {
