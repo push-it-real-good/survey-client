@@ -130,6 +130,8 @@ const deleteSurveySuccess = (data) => {
   // store.survey = data.survey
   // console.log('deleteSurveySuccess')
   getSurveys()
+  $('#responses-content').hide()
+  $('#responses-content-text').hide()
 }
 
 const deleteSurveyFailure = (error) => {
