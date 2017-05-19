@@ -15,7 +15,7 @@ const clearSurveyModal = function () {
 }
 
 const createSurveySuccess = (data) => {
-  console.log('createSurveySuccess')
+  // console.log('createSurveySuccess')
   $('.list-group').empty()
 }
 
@@ -25,12 +25,12 @@ const createSurveyFailure = (error) => {
 
 const updateSurveySuccess = (data) => {
   // store.survey = data.survey
-  console.log('updateSurveySuccess')
+  // console.log('updateSurveySuccess')
   getSurveys()
 }
 
 const updateSurveyFailure = (error) => {
-  console.log('updateSurveySuccess, error = ', error)
+  // console.log('updateSurveySuccess, error = ', error)
   console.error(error)
 }
 
@@ -90,13 +90,13 @@ const getSurveysFailure = (error) => {
 
 const getDynamicSurveysSuccess = (data) => {
   // store.user = data.user
-  console.log(data)
-  console.log(data.surveys[0])
-  console.log('title:', data.surveys[0].title)
-  console.log('url:', data.surveys[0].url)
-  console.log('_owner:', data.surveys[0]._owner)
-  console.log('length:', data.surveys[0].length)
-  console.log('length:', data.surveys[0].question)
+  // console.log(data)
+  // console.log(data.surveys[0])
+  // console.log('title:', data.surveys[0].title)
+  // console.log('url:', data.surveys[0].url)
+  // console.log('_owner:', data.surveys[0]._owner)
+  // console.log('length:', data.surveys[0].length)
+  // console.log('length:', data.surveys[0].question)
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
   // debugger;
   $('.dynamic-content').html(showSurveysHtml) // .order
@@ -117,7 +117,7 @@ const getOneDynamicSurveySuccess = (data) => {
   // $('#survey_id').html(data.survey.id)
   // $('#survey_id').val(data.survey.id)
   $('#create-response').attr('data-id', data.survey.id)
-  console.log('innerHTML: ', $('#create-response').attr('data-id'))
+  // console.log('innerHTML: ', $('#create-response').attr('data-id'))
   $('#survey_question').text(data.survey.question)
   // $('#survey_owner').text(data.survey._owner)
 }
@@ -128,12 +128,12 @@ const getOneDynamicSurveyFailure = (error) => {
 
 const deleteSurveySuccess = (data) => {
   // store.survey = data.survey
-  console.log('deleteSurveySuccess')
+  // console.log('deleteSurveySuccess')
   getSurveys()
 }
 
 const deleteSurveyFailure = (error) => {
-  console.log('deleteSurveySuccess, error = ', error)
+  // console.log('deleteSurveyFailure, error = ', error)
   console.error(error)
 }
 
