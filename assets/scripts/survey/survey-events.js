@@ -47,13 +47,13 @@ const onUpdateSurvey = function (event) {
 const updateItem = function () {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('updateItem() : id is: ' + id)
+  // console.log('updateItem() : id is: ' + id)
   populateUpdateForm(id)
 }
 
 const populateUpdateForm = function (id) {
   const survey = findSurveyById(id)
-  console.log('>> survey.title is ', survey.title)
+  // console.log('>> survey.title is ', survey.title)
   $('#surveyId').val(survey.id)
   $('#surveyTitle').val(survey.title)
   $('#surveyQ1').val(survey.question)
@@ -86,16 +86,16 @@ function getParameterByName () {
   // print url
   // console.log(window.location.href)
   // true or false, there are parameters as indicated by a "?"
-  console.log(window.location.href.split('?')[1] === undefined)
+  // console.log(window.location.href.split('?')[1] === undefined)
   if (window.location.href.split('?')[1] === undefined) {
-    return 'no parameters, will load Surveyor Page'
+    return ''
   } else {
     const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
       return e.split('=')[1]
     })
-    console.log('array: ', arr)
-    console.log('survey_id: ', arr[1])
-    console.log('parameters, will load Respondent Page')
+    // console.log('array: ', arr)
+    // console.log('survey_id: ', arr[1])
+    // console.log('parameters, will load Respondent Page')
     return arr
   }
 }
@@ -105,7 +105,7 @@ const dynamicContent = getParameterByName()
 const deleteItem = function () {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('deleteItem() : id is: ' + id)
+  // console.log('deleteItem() : id is: ' + id)
   api.deleteSurvey(id)
     .done(ui.deleteSurveySuccess)
     .fail(ui.deleteSurveyFailure)
