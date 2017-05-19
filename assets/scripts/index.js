@@ -48,7 +48,7 @@ $(() => {
 $(document).ready(function () {
 // Check if the URL parameter is apples
   const dc = surveyEvents.dynamicContent
-  console.log(dc)
+  // console.log(dc)
   if (dc[0] === 'respondents' && dc[1] !== undefined) { // Check if the URL parameter is bananas
     $('#respondents').show()
     api.getOneDynamicSurvey(dc[1])

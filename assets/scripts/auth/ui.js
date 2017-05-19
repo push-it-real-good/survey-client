@@ -32,7 +32,7 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('sign in token = ', data.user.token)
+  // console.log('sign in token = ', data.user.token)
   $('#signUpModal').hide()
   $('#signInModal').hide()
   $('#title-message').html('Survey Creation Tool')
