@@ -34,10 +34,23 @@ const updateSurveyFailure = (error) => {
 }
 
 const getSurveysSuccess = (data) => {
-  const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
-  store.surveys = data.surveys
-  console.log('>>>>> store.surveys = ', store.surveys)
-  $('#surveys-content').html(showSurveysHtml)
+  $('#surveys-content').hide()
+  $('#surveys-content-text').hide()
+  // console.log(data)
+  // console.log(data.surveys)
+  // console.log(data.surveys.length)
+  // if (data.surveys.length !== undefined)
+  if (data.surveys[0] !== undefined) {
+    const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+    store.surveys = data.surveys
+    // console.log('>>>>> store.surveys = ', store.surveys)
+    $('#surveys-content').show()
+    $('#surveys-content').html(showSurveysHtml)
+  } else {
+    store.surveys = data.surveys
+    $('#surveys-content-text').show()
+    $('#surveys-content-text').text('you have no surveys (╯°□°）╯︵ ┻━┻')
+  }
 }
 
 const getSurveysFailure = (error) => {
