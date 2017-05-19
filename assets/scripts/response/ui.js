@@ -14,11 +14,25 @@ const createResponseFailure = () => {
 }
 
 const getResponsesSuccess = (data) => {
-  // console.log('data after api call', data)
-  const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
-  store.responses = data.responses
-  // console.log('>>>>> store.responses = ', store.responses)
-  $('#responses-content').html(showResponsesHtml)
+  $('#responses-content').hide()
+  $('#responses-content-text').hide()
+  // console.log(data)
+  // console.log(data.responses)
+  // console.log(data.responses.length)
+  // console.log(data.responses[0])
+  // if (data.responses.length !== undefined)
+  if (data.responses[0] !== undefined) {
+    // console.log('data after api call', data)
+    const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
+    store.responses = data.responses
+    // console.log('>>>>> store.responses = ', store.responses)
+    $('#responses-content').show()
+    $('#responses-content').html(showResponsesHtml)
+  } else {
+    store.responses = data.responses
+    $('#responses-content-text').show()
+    $('#responses-content-text').text('you have no responses (╯°□°）╯︵ ┻━┻')
+  }
 }
 
 const getResponsesFailure = () => {

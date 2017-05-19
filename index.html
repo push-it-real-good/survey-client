@@ -240,7 +240,7 @@
                 <form id="update-survey">
                 <fieldset>
                   <div class="form-group">
-                    <div class="col-sm-10">
+                    <div class="col-sm-10 hideMe">
                       <span class="input-group-addon"  id="survey-id"></span>
                       <input type="text" name="survey[id]" id="surveyId" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
                     </div>
@@ -263,10 +263,13 @@
             </div>
           </div>
         </div>
-    <!-- surveys content -->
-      <div class="list-group" id ="surveys-content"></div>
-    <!-- responses content -->
-      <div class="list-group" id ="responses-content"></div>
+        <!-- surveys content -->
+        <!-- surveys content -->
+          <div class="list-group" id ="surveys-content"></div>
+          <div class="list-group" id ="surveys-content-text"></div>
+        <!-- responses content -->
+          <div class="list-group" id ="responses-content"></div>
+          <div class="list-group" id ="responses-content-text"></div>
 
 </div>
 <!-- End of default-content -->
