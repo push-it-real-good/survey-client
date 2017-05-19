@@ -32,6 +32,9 @@ $(() => {
     $('#signUpError').hide()
     $('#signUpSuccess').hide()
   })
+  $('#createSurvey').on('hidden.bs.modal', function () {
+    $(this).find('input,textarea,select').val('').end()
+  })
 
   authEvents.addHandlers()
   surveyEvents.addHandlers()
