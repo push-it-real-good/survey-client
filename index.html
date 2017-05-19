@@ -276,14 +276,12 @@
   <!-- respondents handlebars -->
   <div id="respondents" class="container col-md-12 dynamic-content">
     <h1 id="default-display-text" text="surveys">Survey</h1>
-    <ol class="dynamic-content">
-    </ol>
-    <table class="table table-sm" id="survey-list-table">
+    <!-- <ol class="dynamic-content">
+    </ol> -->
+    <table class="table table-sm" id="response-list-table">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Question</th>
-          <th>Owner</th>
           <th>Response</th>
           <th></th> <!-- for submit button -->
         </tr>
@@ -291,42 +289,24 @@
 
       <tbody>
           <tr>
-            <td class="survey_id"></td>
             <td id="survey_question"></td>
-            <td id="survey_owner"></td>
           <!-- Create Response -->
             <td id="survey_response">
               <div class="input-group">
                 <form id="create-response">
                   <fieldset>
-                      <input type="text" name="response[survey_id]" id="survey_id" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
-                    <!-- <div type="text" id="survey_id" name="response[survey_id]"></td> -->
                     <input type="text" name="response[text]" id="responseq1" class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
-                    <!-- <button type="submit" class="btn btn-primary" id= "create_response">Submit Response</button> -->
                     <input type="submit" class="btn btn-primary" id= "create_response">
-
-                    <!-- <input type="text" id="new-item-input" class="new-item-class" placeholder="new list item" required>
-                    <input type="submit" value="Create / Add Item!" id="createItemsButton" class="new-item-class"> -->
-
                     <div class="errors-create-response" > </div>
                   </fieldset>
                 </form>
               </div>
-<!-- <div class="input-group">
-  <form id="create-item">
-    <fieldset>
-      <input type="text" id="new-item-input" class="new-item-class" placeholder="new list item" required>
-      <input type="submit" value="Create / Add Item!" id="createItemsButton" class="new-item-class">
-    </fieldset>
-  </form>
-</div> -->
             </td>
           <!-- End of Create Response -->
           </tr>
       </tbody>
     </table>
   </div>
-
 <!-- End of Dynamic Content -->
 
     </body>
