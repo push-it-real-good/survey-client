@@ -48,22 +48,12 @@ $(() => {
 $(document).ready(function () {
 // Check if the URL parameter is apples
   const dc = surveyEvents.dynamicContent
-  console.log(dc)
+  // console.log(dc)
   if (dc[0] === 'respondents' && dc[1] !== undefined) { // Check if the URL parameter is bananas
     $('#respondents').show()
     api.getOneDynamicSurvey(dc[1])
-      // .then(function (data) {
-      //   ui.getDynamicSurveysSuccess(data)
-      // })
       .then(ui.getOneDynamicSurveySuccess)
       .catch(ui.getOneDynamicSurveyFailure)
-
-      // api.getDynamicSurveys()
-      //   // .then(function (data) {
-      //   //   ui.getDynamicSurveysSuccess(data)
-      //   // })
-      //   .then(ui.getDynamicSurveysSuccess)
-      //   .catch(ui.getDynamicSurveysFailure)
     // Check if the URL parmeter is empty or not defined, display default content
   } else {
     $('#default-content').show()
