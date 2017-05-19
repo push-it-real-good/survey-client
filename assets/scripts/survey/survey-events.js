@@ -143,7 +143,7 @@ const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
   $(document).on('click', '.update-survey', updateItem)
-  $(document).on('click', '.get-surveys', onGetSurveys)
+  $(document).on('click', '#get-survey-button', onGetSurveys)
   $(document).on('click', '.remove-survey', deleteItem)
 }
 

@@ -2,6 +2,13 @@
 
 const store = require('../store.js')
 
+const resetPwValidation = function () {
+  const message = document.getElementById('confirmMessage')
+  const pass2 = document.getElementById('password2')
+  pass2.style.backgroundColor = ''
+  message.style.color = ''
+  message.innerHTML = ''
+}
 const signUpSuccess = (data) => {
   $('.form-control').val('')
   $('#signUpModal').hide()
@@ -9,10 +16,12 @@ const signUpSuccess = (data) => {
   // $('.header-message').show().html('Congratulations, you have a new account.')
   $('.sign-in-msg').html('Log in.')
   $('#sign-in').trigger('reset')
+  resetPwValidation()
 }
 
 const signUpFailure = (error) => {
   $('.form-control').val('')
+
   $('#signUpError').show().html('Something\'s wrong. Try again.')
   setTimeout(function () {
     $('#signUpError').fadeOut(900)

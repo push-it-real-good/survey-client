@@ -1,17 +1,20 @@
 'use strict'
 
 const store = require('../store')
-const showResponsesTemplate = require('../templates/survey.handlebars')
+const showResponsesTemplate = require('../templates/response.handlebars')
 
 const createResponseSuccess = (data) => {
-  console.log('createResponseSuccess')
+  // console.log('createResponseSuccess')
+  $('#response-list-table').hide()
+  $('#default-display-text').text('Thanks for taking the survey! ¯\\_(ツ)_/¯')
 }
 
-const createResponseFailure = (error) => {
-  console.error(error)
+const createResponseFailure = () => {
+  // console.error(error)
 }
 
 const getResponsesSuccess = (data) => {
+  console.log('data after api call', data)
   const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
   store.responses = data.responses
   console.log('>>>>> store.responses = ', store.responses)
