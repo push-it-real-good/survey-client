@@ -86,6 +86,7 @@ const changePasswordSuccess = () => {
   $('#ChangePasswordSuccess').show().html('Password changed! Close Screen to continue.')
   $('#change-password').trigger('reset')
   $('.form-group-pw').hide()
+  $('.list-group').empty()
 }
 
 const changePasswordFailure = (error) => {

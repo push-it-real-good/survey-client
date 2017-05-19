@@ -51,16 +51,6 @@ const deleteSurvey = (id) => {
     }
   })
 }
-//
-// const getResponses = function (dc) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/' + dc,
-//     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // }
-//   })
-// }
 
 const getDynamicSurveys = function () {
   return $.ajax({
