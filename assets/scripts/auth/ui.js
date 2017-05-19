@@ -3,6 +3,7 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
+  $('.form-control').val('')
   $('#signUpModal').hide()
   $('#signInModal').show()
   // $('.header-message').show().html('Congratulations, you have a new account.')
@@ -11,6 +12,7 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (error) => {
+  $('.form-control').val('')
   $('#signUpError').show().html('Something\'s wrong. Try again.')
   setTimeout(function () {
     $('#signUpError').fadeOut(900)
@@ -39,6 +41,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
+  $('.form-control').val('')
   $('#signInError').show().html('Something\'s wrong with your login. Try again.')
   setTimeout(function () {
     $('#signInError').fadeOut(700)
@@ -49,6 +52,7 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null
+  $('.form-control').val('')
   $('#confirm-logout').modal('hide')
   $('.nav-btns').hide()
   $('#signUpModal').hide()
@@ -62,11 +66,13 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = (error) => {
+  $('.form-control').val('')
   $('#change-password').trigger('reset')
   console.error('signOutFailure ran:', error)
 }
 
 const changePasswordSuccess = () => {
+  $('.form-control').val('')
   $('#ChangePasswordError').hide()
   $('#ChangePasswordSuccess').show().html('Password changed! Close Screen to continue.')
   $('#change-password').trigger('reset')
@@ -74,6 +80,7 @@ const changePasswordSuccess = () => {
 }
 
 const changePasswordFailure = (error) => {
+  $('.form-control').val('')
   $('#ChangePasswordError').show().html('Check your password and try again.')
   setTimeout(function () {
     $('#ChangePasswordError').fadeOut(700)
