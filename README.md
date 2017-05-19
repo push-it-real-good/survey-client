@@ -15,7 +15,7 @@
 
 ## ERD
 
-<img width="826" alt="survey_erd" src="https://cloud.githubusercontent.com/assets/26236941/26231174/af1471b2-3c1b-11e7-91b7-a0f69030306f.png">
+<img width="799" alt="survey-erd" src="https://cloud.githubusercontent.com/assets/26236941/26231452/46391b96-3c1d-11e7-8935-76639a88c23d.png">
 
 ## Wireframe
 
