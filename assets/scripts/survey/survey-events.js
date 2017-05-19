@@ -21,26 +21,9 @@ const onCreateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
-  console.log('++++ onCreateSurvey(), token = ', store.user.token)
+  onGetSurveys()
+  // console.log('++++ onCreateSurvey(), token = ', store.user.token)
 }
-
-// const onUpdateSurvey = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(this)
-//   console.log('>>>>>>>>onUpdateSurvey: data = ', data)
-//   api.updateSurvey(data)
-//   .then(function (data) {
-//     ui.updateSurveySuccess(data)
-//     $('#updateSurvey').modal('hide')
-//   })
-//   .catch(ui.updateSurveyFailure)
-//   // Clear out existing text in modal text boxes when there is a failure
-//   // source: http://stackoverflow.com/questions/31022950/how-clear-bootstrap-modal-on-hide
-//   $('#updateSurvey').on('hidden.bs.modal', function () {
-//     $(this).find('input,textarea,select').val('').end()
-//   })
-//   ui.clearSurveyModal()
-// }
 
 const onUpdateSurvey = function (event) {
   event.preventDefault()
@@ -58,18 +41,19 @@ const onUpdateSurvey = function (event) {
     $(this).find('input,textarea,select').val('').end()
   })
   ui.clearSurveyModal()
+  onGetSurveys()
 }
 
 const updateItem = function () {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('updateItem() : id is: ' + id)
+  // console.log('updateItem() : id is: ' + id)
   populateUpdateForm(id)
 }
 
 const populateUpdateForm = function (id) {
   const survey = findSurveyById(id)
-  console.log('>> survey.title is ', survey.title)
+  // console.log('>> survey.title is ', survey.title)
   $('#surveyId').val(survey.id)
   $('#surveyTitle').val(survey.title)
   $('#surveyQ1').val(survey.question)
@@ -93,37 +77,25 @@ const onShowUpdateSurvey = function () {
 }
 
 const onGetSurveys = (event) => {
-  event.preventDefault()
   api.getSurveys()
     .then(ui.getSurveysSuccess)
     .catch(ui.getSurveysFailure)
 }
 
-// const onGetSurveys = function (event) {
-//   event.preventDefault()
-//   console.log('onGetSurveys')
-//   api.getSurveys()
-//   .then(function (data) {
-//     ui.getSurveysSuccess(data)
-//   })
-//   // .then(ui.getSurveysSuccess)
-//   .catch(ui.getSurveysFailure)
-// }
-
 function getParameterByName () {
   // print url
   // console.log(window.location.href)
   // true or false, there are parameters as indicated by a "?"
-  console.log(window.location.href.split('?')[1] === undefined)
+  // console.log(window.location.href.split('?')[1] === undefined)
   if (window.location.href.split('?')[1] === undefined) {
-    return 'no parameters, will load Surveyor Page'
+    return ''
   } else {
     const arr = $.map(window.location.href.split('?')[1].split('&'), function (e, i) {
       return e.split('=')[1]
     })
-    console.log('array: ', arr)
-    console.log('survey_id: ', arr[1])
-    console.log('parameters, will load Respondent Page')
+    // console.log('array: ', arr)
+    // console.log('survey_id: ', arr[1])
+    // console.log('parameters, will load Respondent Page')
     return arr
   }
 }
@@ -133,17 +105,18 @@ const dynamicContent = getParameterByName()
 const deleteItem = function () {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('deleteItem() : id is: ' + id)
+  // console.log('deleteItem() : id is: ' + id)
   api.deleteSurvey(id)
     .done(ui.deleteSurveySuccess)
     .fail(ui.deleteSurveyFailure)
+  onGetSurveys()
 }
 
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#update-survey').on('submit', onUpdateSurvey)
   $(document).on('click', '.update-survey', updateItem)
-  $(document).on('click', '.get-surveys', onGetSurveys)
+  $(document).on('click', '#get-survey-button', onGetSurveys)
   $(document).on('click', '.remove-survey', deleteItem)
 }
 

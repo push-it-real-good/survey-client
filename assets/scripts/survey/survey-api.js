@@ -4,8 +4,8 @@ const config = require('../config')
 const store = require('../store')
 
 const createSurvey = (data) => {
-  console.log('createSurvey(), token = ', store.user.token)
-  console.log('createSurvey(), data = ', data)
+  // console.log('createSurvey(), token = ', store.user.token)
+  // console.log('createSurvey(), data = ', data)
   return $.ajax({
     url: config.apiOrigin + '/surveys',
     method: 'POST',
@@ -17,7 +17,7 @@ const createSurvey = (data) => {
 }
 
 const getSurveys = function () {
-  console.log('getSurveys(), token = ', store.user.token)
+  // console.log('getSurveys(), token = ', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/surveys',
     method: 'GET',
@@ -28,8 +28,8 @@ const getSurveys = function () {
 }
 
 const updateSurvey = (data) => {
-  console.log('updateSurvey(), token = ', store.user.token)
-  console.log('updateSurvey(), data = ', data)
+  // console.log('updateSurvey(), token = ', store.user.token)
+  // console.log('updateSurvey(), data = ', data)
   return $.ajax({
     url: config.apiOrigin + '/surveys/' + data.survey.id,
     method: 'PATCH',
@@ -41,7 +41,7 @@ const updateSurvey = (data) => {
 }
 
 const deleteSurvey = (id) => {
-  console.log('deleteSurvey(), token = ', store.user.token)
+  // console.log('deleteSurvey(), token = ', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/surveys/' + id,
     method: 'DELETE',
@@ -51,16 +51,6 @@ const deleteSurvey = (id) => {
     }
   })
 }
-//
-// const getResponses = function (dc) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/' + dc,
-//     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // }
-//   })
-// }
 
 const getDynamicSurveys = function () {
   return $.ajax({

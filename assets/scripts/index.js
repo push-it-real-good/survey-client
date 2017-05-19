@@ -13,6 +13,7 @@ const responseEvents = require('./response/events')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('.form-control').val('')
   $('#add-task-modal').on('hidden.bs.modal', function () {
     $(this).find('input,textarea,select').val('').end()
   })
@@ -31,6 +32,9 @@ $(() => {
     $('#signUpError').hide()
     $('#signUpSuccess').hide()
   })
+  $('#createSurvey').on('hidden.bs.modal', function () {
+    $(this).find('input,textarea,select').val('').end()
+  })
 
   authEvents.addHandlers()
   surveyEvents.addHandlers()
@@ -47,26 +51,12 @@ $(() => {
 $(document).ready(function () {
 // Check if the URL parameter is apples
   const dc = surveyEvents.dynamicContent
-  console.log(dc)
-  if (dc[0] === 'apples') {
-    $('#apples').show()
-  } else if (dc[0] === 'oranges') { // Check if the URL parameter is oranges
-    $('#oranges').show()
-  } else if (dc[0] === 'respondents' && dc[1] !== undefined) { // Check if the URL parameter is bananas
+  // console.log(dc)
+  if (dc[0] === 'respondents' && dc[1] !== undefined) { // Check if the URL parameter is bananas
     $('#respondents').show()
     api.getOneDynamicSurvey(dc[1])
-      // .then(function (data) {
-      //   ui.getDynamicSurveysSuccess(data)
-      // })
       .then(ui.getOneDynamicSurveySuccess)
       .catch(ui.getOneDynamicSurveyFailure)
-
-      // api.getDynamicSurveys()
-      //   // .then(function (data) {
-      //   //   ui.getDynamicSurveysSuccess(data)
-      //   // })
-      //   .then(ui.getDynamicSurveysSuccess)
-      //   .catch(ui.getDynamicSurveysFailure)
     // Check if the URL parmeter is empty or not defined, display default content
   } else {
     $('#default-content').show()

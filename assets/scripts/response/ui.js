@@ -1,47 +1,43 @@
 'use strict'
 
 const store = require('../store')
-const showResponsesTemplate = require('../templates/survey.handlebars')
+const showResponsesTemplate = require('../templates/response.handlebars')
 
 const createResponseSuccess = (data) => {
-  console.log('createResponseSuccess')
+  // console.log('createResponseSuccess')
+  $('#response-list-table').hide()
+  $('#default-display-text').text('Thanks for taking the survey! ¯\\_(ツ)_/¯')
 }
 
-const createResponseFailure = (error) => {
-  console.error(error)
+const createResponseFailure = () => {
+  // console.error(error)
 }
 
 const getResponsesSuccess = (data) => {
-  const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
-  store.responses = data.responses
-  console.log('>>>>> store.responses = ', store.responses)
-  $('#responses-content').html(showResponsesHtml)
+  $('#responses-content').hide()
+  $('#responses-content-text').hide()
+  // console.log(data)
+  // console.log(data.responses)
+  // console.log(data.responses.length)
+  // console.log(data.responses[0])
+  // if (data.responses.length !== undefined)
+  if (data.responses[0] !== undefined) {
+    // console.log('data after api call', data)
+    const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
+    store.responses = data.responses
+    // console.log('>>>>> store.responses = ', store.responses)
+    $('#responses-content').show()
+    $('#responses-content').html(showResponsesHtml)
+  } else {
+    store.responses = data.responses
+    $('#responses-content-text').show()
+    $('#responses-content-text').text('you have no responses (╯°□°）╯︵ ┻━┻')
+  }
 }
 
-const getResponsesFailure = (error) => {
-  console.error(error)
+const getResponsesFailure = () => {
+  // console.error(error)
 }
-
-// const getResponsesSuccess = (data) => {
-//   // store.user = data.user
-//   console.log(data)
-//   console.log(data.responses[0])
-//   console.log('text:', data.responses[0].text)
-//   console.log('title:', data.responses[0].title)
-//   console.log('response_id:', data.responses[0].response_id)
-//   console.log('question_id:', data.responses[0].question_id)
-//   console.log('respondent_id:', data.responses[0].respondent_id)
-//   const showResponsesHtml = showResponsesTemplate({ responses: data.responses })
-//   // debugger;
-//   $('.content').html(showResponsesHtml) // .order
-//   // $('.errors-create-item').empty()
-//   // $('#create-item').show()
-//   // $('#spacer1').text('List')
-// }
-//
-// const getResponsesFailure = (error) => {
-//   console.error(error)
-// }
 
 module.exports = {
   createResponseSuccess,
