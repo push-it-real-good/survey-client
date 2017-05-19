@@ -7,32 +7,6 @@ const ui = require('./ui')
 const onSignUpClick = function (event) {
   $('#signUpModal').show()
 
-  document.getElementById('password2').onkeyup = function () {
-    const pass1 = document.getElementById('password1')
-    const pass2 = document.getElementById('password2')
-    const message = document.getElementById('confirmMessage')
-
-    const badColor = '#ff6666'
-    const goodColor = '#66cc66'
-
-    if (pass1.value === pass2.value) {
-      document.getElementById('chpw-submit').disabled = false
-      pass2.style.backgroundColor = goodColor
-      message.style.color = goodColor
-      message.innerHTML = 'Passwords Match!'
-    } else if ((pass2.value !== ('')) && (pass1.value !== pass2.value)) {
-      document.getElementById('chpw-submit').disabled = true
-      pass2.style.backgroundColor = badColor
-      message.style.color = badColor
-      message.innerHTML = 'Enter matching password!'
-    } else {
-      document.getElementById('chpw-submit').disabled = false
-      pass2.style.backgroundColor = ''
-      message.style.color = ''
-      message.innerHTML = ''
-    }
-  }
-
   $('.form-control').val('')
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
