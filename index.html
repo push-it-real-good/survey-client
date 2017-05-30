@@ -317,21 +317,31 @@
                   <fieldset>
 
                     <div id="res-number">
-                      <label>On a scale from 1 - 5 : </label>
-                      <input id="response-text" type="number" min="1" max="5" step="1" maxlength="1" size="1" name="response[rating]" class="form-control" placeholder="Enter Your Response ..." required>
+                      <label>On a scale from 1 - 5 :    </label>
+                      <!-- <input id="response-text" type="number" min="1" max="5" step="1" maxlength="1" size="1" name="response[rating]" class="form-control" placeholder="Enter Your Response ..." required> -->
+                      <div <div class="w3-panel w3-border w3-border-red">
+                      <input type="radio" name="response[rating]" value="1" required="required" > 1
+                      <input type="radio" name="response[rating]" value="2" required="required" > 2
+                      <input type="radio" name="response[rating]" value="3" required="required" > 3
+                      <input type="radio" name="response[rating]" value="4" required="required" > 4
+                      <input type="radio" name="response[rating]" value="5" required="required" > 5
                     </div>
+                    <div class="padding"></div>
+                  </div>
+                </div>
 
                     <div id="res-string">
                       <label>Input your Answer : </label>
-                      <input id="responseq1" type="text" name="response[text]"  class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
+                      <input id="responseq1" type="text" name="response[text]"  class="form-control" placeholder="Response" aria-describedby="basic-addon1" required="required">
+                      <div class="padding"></div>
                     </div>
 
                     <div id="res-boolean">
-                      <label class="btn btn-lg response-btn-boolean">
-                        <input type="radio" name="response[boolean]" value="true"> YES
+                      <label class="btn btn-lg response-btn-boolean" />
+                        <input type="radio" name="response[boolean]" value="true" required="required"> YES
                       </label>
                       <label class="btn btn-lg response-btn-boolean">
-                        <input type="radio" name="response[boolean]" value="false"> NO
+                        <input type="radio" name="response[boolean]" value="false" required="required"> NO
                       </label>
                     </div>
 
