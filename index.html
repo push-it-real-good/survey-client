@@ -194,52 +194,43 @@
         <h3 class="form-header">Create Survey</h3>
       </div>
     </div>
-          <div class="modal-body">
+    <div class="modal-body">
 
-            <form id="create-survey" class="form-horizontal">
-            <fieldset>
-
-              <div class="input-group">
-                <div class="input-group">
-                  <div class="col-sm-12">
-                    <span class="input-group-addon " id="survey-title">Survey Title</span>
-                    <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Enter Survey Title Here ..." aria-describedby="basic-addon1" required>
-                  </div>
-
-                <div class="auth-alert">
-                  <h3 id="create-survey-error" class="form-error"></h3>
-                  <h3 id="create-survey-success" class="form-success"></h3>
-                </div>
-
-                <div class="col-sm-12">
-                  <span class="input-group-addon" id="survey-q1">Survey Question</span>
-                  <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="What is your question?" aria-describedby="basic-addon1" required>
-                </div>
-
-                <div class="col-sm-12">
-          <span class="input-group-addon" id="expected-response-type">Expected response type...</span>
-          <select id="response-type" name="survey[response_type]" class="form-control" required>
-            <option value="" disabled selected hidden>Select expected response type...</option>
-            <option value="String">Text response</option>
-            <option value="Boolean">Response of only "Yes" or "No"</option>
-            <option value="Number">Rating Response : on a scale from 1 - 5</option>
-          </select>
-        </div>
+      <form id="create-survey" class="form-horizontal">
+        <fieldset>
+            <div class="input-group">
+              <div class="col-sm-12">
+                <span class="input-group-addon " id="survey-title">Survey Title</span>
+                <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Enter Survey Title Here ..." aria-describedby="basic-addon1" required>
               </div>
-              <div class="padding"></div>
 
-                <button type="submit" class="btn btn-primary btn-block" id= "create_survey">Create Survey</button>
-                <div class="padding"></div>
+              <div class="col-sm-12">
+                <span class="input-group-addon" id="survey-q1">Survey Question</span>
+                <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="What is your question?" aria-describedby="basic-addon1" required>
+              </div>
 
-                <button type="button" class="btn btn-resolved btn-block" data-dismiss="modal">Close</button>
-            </fieldset>
+              <div class="col-sm-12">
+                <span class="input-group-addon" id="expected-response-type">Expected response type...</span>
+                <select id="response-type" name="survey[response_type]" class="form-control" required>
+                  <option value="" disabled selected hidden>Select expected response type...</option>
+                  <option value="String">Text response</option>
+                  <option value="Boolean">Response of only "Yes" or "No"</option>
+                  <option value="Number">Rating Response : on a scale from 1 - 5</option>
+                </select>
+              </div>
+            </div>
+            <div class="padding"></div>
 
-            </form>
-          </div>
-        </div>
-        </div>
+            <button type="submit" class="btn btn-primary btn-block" id= "create_survey">Create Survey</button>
+            <div class="padding"></div>
+
+            <button type="button" class="btn btn-resolved btn-block" data-dismiss="modal">Close</button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-
+  </div>
+  </div>
 
   <!-- End of Create Survey Modal -->
 
@@ -298,7 +289,13 @@
   <!-- Dynamic Section 3 -->
   <!-- respondents handlebars -->
   <div id="respondents" class="container col-md-12 dynamic-content">
-    <h1 id="default-display-text" text="surveys">Survey</h1>
+    <div id="jumbotron-top" class="jumbotron jumbotron-fluid">
+      <h2 id="title-message" class="title_message ">Survey Response</h2>
+      <h1 id="default-display-text" class="surveys-title"></h1>
+      <div class="jumbotron-msg container push-spaces">
+        <p></div>
+      </div>
+
     <!-- <ol class="dynamic-content">
     </ol> -->
     <table class="table table-sm" id="response-list-table">
@@ -316,9 +313,28 @@
           <!-- Create Response -->
             <td id="survey_response">
               <div class="input-group">
-                <form id="create-response">
+                <form id="create-response" novalidate>
                   <fieldset>
-                    <input type="text" name="response[text]" id="responseq1" class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
+
+                    <div id="res-number">
+                      <label>On a scale from 1 - 5 : </label>
+                      <input id="response-text" type="number" min="1" max="5" step="1" maxlength="1" size="1" name="response[rating]" class="form-control" placeholder="Enter Your Response ..." required>
+                    </div>
+
+                    <div id="res-string">
+                      <label>Input your Answer : </label>
+                      <input id="responseq1" type="text" name="response[text]"  class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
+                    </div>
+
+                    <div id="res-boolean">
+                      <label class="btn btn-lg response-btn-boolean">
+                        <input type="radio" name="response[boolean]" value="true"> YES
+                      </label>
+                      <label class="btn btn-lg response-btn-boolean">
+                        <input type="radio" name="response[boolean]" value="false"> NO
+                      </label>
+                    </div>
+
                     <!-- <td id="survey_response_button_col"> -->
                       <input type="submit" class="btn btn-primary" id= "create_response">
                     <!-- </td> -->
