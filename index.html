@@ -200,10 +200,11 @@
             <fieldset>
 
               <div class="input-group">
-                <div class="col-sm-12">
-                  <span class="input-group-addon"  id="survey-title"></span>
-                  <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Enter Survey Title Here ..." aria-describedby="basic-addon1" required>
-                </div>
+                <div class="input-group">
+                  <div class="col-sm-12">
+                    <span class="input-group-addon " id="survey-title">Survey Title</span>
+                    <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Enter Survey Title Here ..." aria-describedby="basic-addon1" required>
+                  </div>
 
                 <div class="auth-alert">
                   <h3 id="create-survey-error" class="form-error"></h3>
@@ -211,18 +212,19 @@
                 </div>
 
                 <div class="col-sm-12">
-                    <span class="input-group-addon" id="survey-q1"></span>
+                  <span class="input-group-addon" id="survey-q1">Survey Question</span>
                   <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="What is your question?" aria-describedby="basic-addon1" required>
                 </div>
+
                 <div class="col-sm-12">
-                  <span class="input-group-addon" id="expected-response-type"></span>
-                    <select id="selectbasic" name="selectbasic" class="form-control" required>
-                      <option value="" disabled selected hidden>Select expected response type...</option>
-                      <option value="Boolean">Yes/No</option>
-                      <option value="Number">Rating</option>
-                      <option value="String">Text</option>
-                    </select>
-                  </div>
+          <span class="input-group-addon" id="expected-response-type">Expected response type...</span>
+          <select id="response-type" name="survey[response_type]" class="form-control" required>
+            <option value="" disabled selected hidden>Select expected response type...</option>
+            <option value="String">Text response</option>
+            <option value="Boolean">Response of only "Yes" or "No"</option>
+            <option value="Number">Rating Response : on a scale from 1 - 5</option>
+          </select>
+        </div>
               </div>
               <div class="padding"></div>
 
