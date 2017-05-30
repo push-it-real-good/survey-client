@@ -1,16 +1,43 @@
-<table class="table table-sm" id="response-list-table">
-  <thead>
-    <tr>
-      <th>Text</th>
-    </tr>
-  </thead>
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-6">
+            <table class="table table-sm" id="response-list-table">
+              <thead>
+                <tr>
+                  <th>Raw Response</th>
+                </tr>
+              </thead>
 
-    <tbody>
-      {{#each responses as |response|}}
-        <tr data-id="{{response.id}}">
-          <td>{{response.text}}</td>
-      </tr>
-    </tbody>
-    {{/each}}
+                <tbody>
+                  {{#each responses as |response|}}
+                    <tr data-id="{{response.id}}">
+                      {{#if response.text}}
+                      <td>{{response.text}}</td>
+                      {{/if}}
+                      {{#if response.rating}}
+                      <td>{{response.rating}}</td>
+                      {{else}}
+                      <td>{{response.boolean}}</td>
+                      {{/if}}
 
-  </table>
+                {{/each}}
+              </tbody>
+              </table>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  {{#each responses as |response|}}
+
+                  {{#if @last }}
+                  <h3> Total Number of Reponse: {{count @index}}</h3>
+                  {{/if}}
+
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
