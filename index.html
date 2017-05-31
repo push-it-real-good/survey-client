@@ -212,7 +212,7 @@
               <div class="col-sm-12">
                 <span class="input-group-addon" id="expected-response-type">Expected response type...</span>
                 <select id="response-type" name="survey[response_type]" class="form-control" required>
-                  <option value="" disabled selected hidden>Select expected response type...</option>
+                  <option value="" disabled  hidden>Select expected response type...</option>
                   <option value="String">Text response</option>
                   <option value="Boolean">Response of only "Yes" or "No"</option>
                   <option value="Number">Rating Response : on a scale from 1 - 5</option>
@@ -319,34 +319,40 @@
                     <div id="res-number">
                       <label>On a scale from 1 - 5 :    </label>
                       <!-- <input id="response-text" type="number" min="1" max="5" step="1" maxlength="1" size="1" name="response[rating]" class="form-control" placeholder="Enter Your Response ..." required> -->
-                      <div <div class="w3-panel w3-border w3-border-red">
-                      <input type="radio" name="response[rating]" value="1" required="required" > 1
-                      <input type="radio" name="response[rating]" value="2" required="required" > 2
-                      <input type="radio" name="response[rating]" value="3" required="required" > 3
-                      <input type="radio" name="response[rating]" value="4" required="required" > 4
-                      <input type="radio" name="response[rating]" value="5" required="required" > 5
+                      <div <div class="w3-panel w3-border w3-border-red res-number-input">
+                      <input type="radio" name="response[rating]" value="1" required > 1
+                      <input type="radio" name="response[rating]" value="2" required > 2
+                      <input type="radio" name="response[rating]" value="3" required > 3
+                      <input type="radio" name="response[rating]" value="4" required > 4
+                      <input type="radio" name="response[rating]" value="5" required > 5
                     </div>
                     <div class="padding"></div>
+                    <input type="submit" disabled class="btn btn-primary" id= "res-number-create_response">
                   </div>
                 </div>
 
                     <div id="res-string">
                       <label>Input your Answer : </label>
-                      <input id="responseq1" type="text" name="response[text]"  class="form-control" placeholder="Response" aria-describedby="basic-addon1" required="required">
+                      <input id="responseq1" type="text" name="response[text]"  class="form-control res-string-input" placeholder="Response" aria-describedby="basic-addon1" required >
                       <div class="padding"></div>
+                      <input type="submit" disabled class="btn btn-primary" id= "res-string-create_response">
                     </div>
 
                     <div id="res-boolean">
+                      <label>Select your Answer :</label><br>
                       <label class="btn btn-lg response-btn-boolean" />
-                        <input type="radio" name="response[boolean]" value="true" required="required"> YES
+                        <input type="radio" class="response-btn-boolean1" name="response[boolean]" value="true"  > YES
                       </label>
                       <label class="btn btn-lg response-btn-boolean">
-                        <input type="radio" name="response[boolean]" value="false" required="required"> NO
+                        <input type="radio" class="response-btn-boolean2" name="response[boolean]" value="false" > NO
                       </label>
+                      <div class="padding"></div>
+
+                      <input type="submit" disabled class="btn btn-primary" id= "res-boolean-create_response">
                     </div>
 
                     <!-- <td id="survey_response_button_col"> -->
-                      <input type="submit" class="btn btn-primary" id= "create_response">
+                      <!-- <input type="submit" disabled class="btn btn-primary" id= "create_response"> -->
                     <!-- </td> -->
                     <div class="errors-create-response" > </div>
                   </fieldset>

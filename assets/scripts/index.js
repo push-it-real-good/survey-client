@@ -69,4 +69,49 @@ $(document).ready(function () {
       return false
     }
   })
+
+  $('#res-boolean').bind('keyup', function () {
+    if (allFilled()) $('#res-boolean-create_response').removeAttr('disabled')
+  })
+
+  function allFilled () {
+    let filled = true
+    $('.response-btn-boolean').each(function () {
+      if (($('.response-btn-boolean1').val() === '') && ($('.response-btn-boolean2').val() === '')) filled = false
+    })
+    return filled
+  }
+
+  // Form submit crontrol for Yes-No question
+  $(function () {
+    $('#res-boolean').change(function () {
+      $('#res-boolean-create_response').prop('disabled', false)
+    })
+  })
+
+    // Form submit crontrol for Rating question
+  $(function () {
+    $('#res-number').change(function () {
+      $('#res-number-create_response').prop('disabled', false)
+    })
+  })
+
+// Form submit crontrol for Yes-No question
+  $(function () {
+    $('#res-boolean').change(function () {
+      $('#res-boolean-create_response').prop('disabled', false)
+    })
+  })
+
+// Control for text box for response
+  const $input = $('#responseq1')
+  const $button = $('#res-string-create_response')
+
+  setInterval(function () {
+    if ($input.val().length > 0) {
+      $button.attr('disabled', false)
+    } else {
+      $button.attr('disabled', true)
+    }
+  }, 100)
 })
