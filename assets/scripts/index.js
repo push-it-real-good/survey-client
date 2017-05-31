@@ -62,3 +62,11 @@ $(document).ready(function () {
     $('#default-content').show()
   }
 })
+
+$(document).ready(function () {
+  $('#respondents').bind('keypress', function (event) {
+    if (event.keyCode === 13) {
+      return false
+    }
+  })
+})
