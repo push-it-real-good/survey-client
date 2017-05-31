@@ -47,17 +47,19 @@ const getResponsesSuccess = (data) => {
         const total = Number(data.responses.length)
         const yesAnswersResponseNum = Number(yesAnswers)
         const yesAnswerspercent = ((yesAnswersResponseNum / total) * 100)
+        const yesAnswersPercent = parseFloat(yesAnswerspercent).toFixed(2)
 
         $(`.count-true`).text(`${yesAnswers} respondent(s) selected "YES"`)
-        $(`.count-true-percent`).text(`${yesAnswerspercent}% of respondents selected "YES"`)
+        $(`.count-true-percent`).text(`${yesAnswersPercent}% of respondents selected "YES"`)
       } else if (data.responses[i].boolean === false) {
         noAnswers++
         const total = Number(data.responses.length)
         const noAnswersResponseNum = Number(noAnswers)
         const noAnswerspercent = ((noAnswersResponseNum / total) * 100)
+        const noAnswersPercent = parseFloat(noAnswerspercent).toFixed(2)
 
         $(`.count-false`).text(`${noAnswers} respondent(s) selected "NO"`)
-        $(`.count-false-percent`).text(`${noAnswerspercent}% of respondents selected "NO"`)
+        $(`.count-false-percent`).text(`${noAnswersPercent}% of respondents selected "NO"`)
       }
 
       // Rating Counts
@@ -69,41 +71,51 @@ const getResponsesSuccess = (data) => {
           const ratingAnswers1ResponseNum = Number(ratingAnswers1)
           totalRatingCount = (totalRatingCount + 1)
           const ratingAnswers1percent = ((ratingAnswers1ResponseNum / total) * 100)
+          const ratingAnswers1Percent = parseFloat(ratingAnswers1percent).toFixed(2)
 
           $(`.ratingAnswers1`).text(`${ratingAnswers1} respondent(s) selected "1"`)
-          $(`.ratingAnswers1percent`).text(`${ratingAnswers1percent}% of respondents selected "1"`)
+          $(`.ratingAnswers1percent`).text(`${ratingAnswers1Percent}% of respondents selected "1"`)
         } else if (data.responses[i].rating === 2) {
           ratingAnswers2++
           const ratingAnswers2ResponseNum = Number(ratingAnswers2)
           totalRatingCount = (totalRatingCount + 2)
 
           const ratingAnswers2percent = ((ratingAnswers2ResponseNum / total) * 100)
+          const ratingAnswers2Percent = parseFloat(ratingAnswers2percent).toFixed(2)
+
           $(`.ratingAnswers2`).text(`${ratingAnswers2} respondent(s) selected "2"`)
-          $(`.ratingAnswers2percent`).text(`${ratingAnswers2percent}% of rrespondents selected "2"`)
+          $(`.ratingAnswers2percent`).text(`${ratingAnswers2Percent}% of rrespondents selected "2"`)
         } else if (data.responses[i].rating === 3) {
           ratingAnswers3++
           const ratingAnswers3ResponseNum = Number(ratingAnswers3)
           totalRatingCount = (totalRatingCount + 3)
           const ratingAnswers3percent = ((ratingAnswers3ResponseNum / total) * 100)
+          const ratingAnswers3Percent = parseFloat(ratingAnswers3percent).toFixed(2)
 
           $(`.ratingAnswers3`).text(`${ratingAnswers3} respondent(s) selected "3"`)
-          $(`.ratingAnswers3percent`).text(`${ratingAnswers3percent}% of respondents selected "3"`)
+          $(`.ratingAnswers3percent`).text(`${ratingAnswers3Percent}% of respondents selected "3"`)
         } else if (data.responses[i].rating === 4) {
           ratingAnswers4++
           const ratingAnswers4ResponseNum = Number(ratingAnswers4)
           totalRatingCount = (totalRatingCount + 4)
           const ratingAnswers4percent = ((ratingAnswers4ResponseNum / total) * 100)
+          const ratingAnswers4Percent = parseFloat(ratingAnswers4percent).toFixed(2)
+
           $(`.ratingAnswers4`).text(`${ratingAnswers4} respondent(s) selected "4"`)
-          $(`.ratingAnswers4percent`).text(`${ratingAnswers4percent}% of respondents selected "4"`)
+          $(`.ratingAnswers4percent`).text(`${ratingAnswers4Percent}% of respondents selected "4"`)
         } else if (data.responses[i].rating === 5) {
           ratingAnswers5++
           const ratingAnswers5ResponseNum = Number(ratingAnswers5)
           totalRatingCount = (totalRatingCount + 5)
           const ratingAnswers5percent = ((ratingAnswers5ResponseNum / total) * 100)
+          const ratingAnswers5Percent = parseFloat(ratingAnswers5percent).toFixed(2)
+
           $(`.ratingAnswers5`).text(`${ratingAnswers5} respondent(s) selected "5"`)
-          $(`.ratingAnswers5percent`).text(`${ratingAnswers5percent}% of respondents selected "5"`)
+          $(`.ratingAnswers5percent`).text(`${ratingAnswers5Percent}% of respondents selected "5"`)
         }
-        const ratingAverage = (totalRatingCount / total)
+        const ratingaverage = (totalRatingCount / total)
+        const ratingAverage = parseFloat(ratingaverage).toFixed(2)
+
         $(`.ratingAverage`).text(`Average Rating for this Survey Question: ${ratingAverage} `)
       }
       // if (data.responses[i].text) {
