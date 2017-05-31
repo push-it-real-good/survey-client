@@ -14,6 +14,7 @@
                       {{#if response.text}}
                       <td>{{response.text}}</td>
                       {{/if}}
+
                       {{#if response.rating}}
                       <td>{{response.rating}}</td>
                       {{else}}
@@ -29,6 +30,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
+
                   {{#each responses as |response|}}
 
                   {{#if @last }}
@@ -36,6 +38,35 @@
                   {{/if}}
 
                   {{/each}}
+                </div>
+
+                  <div class="modal-header">
+                    <div>
+                      <div class="ratingAverage"></div>
+                      <div class="textDuplicate"></div>
+                    </div>
+                  </div>
+
+                  <div class="modal-header">
+                  <div class="count-false"></div>
+                  <div class="count-true"></div>
+
+                  <div class="ratingAnswers1"></div>
+                  <div class="ratingAnswers2"></div>
+                  <div class="ratingAnswers3"></div>
+                  <div class="ratingAnswers4"></div>
+                  <div class="ratingAnswers5"></div>
+                </div>
+                <div class="modal-header">
+
+                  <div class="count-false-percent"></div>
+                  <div class="count-true-percent"></div>
+
+                  <div class="ratingAnswers1percent"></div>
+                  <div class="ratingAnswers2percent"></div>
+                  <div class="ratingAnswers3percent"></div>
+                  <div class="ratingAnswers4percent"></div>
+                  <div class="ratingAnswers5percent"></div>
                 </div>
               </div>
             </div>
