@@ -43,7 +43,7 @@ const getResponsesSuccess = (data) => {
 
     // convert array to lowercase
     for (let i = 0; i < arrTextResponse.length; i++) {
-    arrTextResponse[i] = arrTextResponse[i].toLowerCase()
+      arrTextResponse[i] = arrTextResponse[i].toLowerCase()
     }
 
 // Create Object with values of array and number of repeats
@@ -53,7 +53,7 @@ const getResponsesSuccess = (data) => {
       if (!result[arrTextResponse[i]])
         result[arrTextResponse[i]] = 0
       ++result[arrTextResponse[i]]
-        }
+    }
 
 // print out contents of Hash
     const total = Number(data.responses.length)
@@ -87,9 +87,8 @@ const getResponsesSuccess = (data) => {
         // $(`.count-true`).text(`${yesAnswers} respondent(s) selected "YES"`)
         // $(`.count-true-percent`).text(`${yesAnswersPercent}% of respondents selected "YES"`)
           // if (i === data.responses.length -1) {
-            $(`.booleanResponseData1`).html('<tr>' + '<th>' + 'YES' + '</th> ' + '<th>' + `${yesAnswers}` + '</th>' + '<th>' + `${yesAnswersPercent}` + '%' + '</th>' + '</tr>')
+        $(`.booleanResponseData1`).html('<tr>' + '<th>' + 'YES' + '</th> ' + '<th>' + `${yesAnswers}` + '</th>' + '<th>' + `${yesAnswersPercent}` + '%' + '</th>' + '</tr>')
           // }
-
       } else if (data.responses[i].boolean === false) {
         noAnswers++
         const total = Number(data.responses.length)
@@ -100,7 +99,7 @@ const getResponsesSuccess = (data) => {
         // $(`.count-false`).text(`${noAnswers} respondent(s) selected "NO"`)
         // $(`.count-false-percent`).text(`${noAnswersPercent}% of respondents selected "NO"`)
         // if (i === data.responses.length -1) {
-          $(`.booleanResponseData2`).html('<tr>' + '<th>' + 'NO' + '</th> ' + '<th>' + `${noAnswers}` + '</th>' + '<th>' + `${noAnswersPercent}` + '%' + '</th>' + '</tr>')
+        $(`.booleanResponseData2`).html('<tr>' + '<th>' + 'NO' + '</th> ' + '<th>' + `${noAnswers}` + '</th>' + '<th>' + `${noAnswersPercent}` + '%' + '</th>' + '</tr>')
         // }
       }
 
