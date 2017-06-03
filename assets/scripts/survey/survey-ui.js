@@ -17,6 +17,7 @@ const clearSurveyModal = function () {
 const createSurveySuccess = (data) => {
   // console.log('createSurveySuccess')
   $('.list-group').empty()
+  getSurveys()
 }
 
 const createSurveyFailure = (error) => {
