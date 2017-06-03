@@ -49,6 +49,8 @@ $(() => {
 
 // query parameters from URL
 $(document).ready(function () {
+  $('input:radio').attr('checked', false)
+  $('input[typed="radio"]').removeAttr('checked')
 // Check if the URL parameter is apples
   const dc = surveyEvents.dynamicContent
   // console.log(dc)
@@ -68,25 +70,6 @@ $(document).ready(function () {
     if (event.keyCode === 13) {
       return false
     }
-  })
-
-  $('#res-boolean').bind('keyup', function () {
-    if (allFilled()) $('#res-boolean-create_response').removeAttr('disabled')
-  })
-
-  function allFilled () {
-    let filled = true
-    $('.response-btn-boolean').each(function () {
-      if (($('.response-btn-boolean1').val() === '') && ($('.response-btn-boolean2').val() === '')) filled = false
-    })
-    return filled
-  }
-
-  // Form submit crontrol for Yes-No question
-  $(function () {
-    $('#res-boolean').change(function () {
-      $('#res-boolean-create_response').prop('disabled', false)
-    })
   })
 
     // Form submit crontrol for Rating question
