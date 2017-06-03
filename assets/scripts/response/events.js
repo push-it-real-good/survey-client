@@ -8,25 +8,14 @@ const onCreateResponse = function (event) {
   event.preventDefault()
   // console.log('createresponse')
   // console.log($(this).attr('data-id'))
-  // const fieldData = getFormFields(this).response.text
-
-  const textData = getFormFields(this).response.text
-  // alert(textData)
-  const booleanData = getFormFields(this).response.boolean
-  // alert(booleanData)
-  const ratingData = getFormFields(this).response.rating
-  // alert(ratingData)
-
+  const fieldData = getFormFields(this).response.text
   // console.log(fieldData)
   const data = {
     'response': {
-      'text': textData,
-      'boolean': booleanData,
-      'rating': ratingData,
+      'text': fieldData,
       'survey_id': $(this).attr('data-id')
     }
   }
-
   api.createResponse(data)
   .then(function (data) {
     ui.createResponseSuccess(data)

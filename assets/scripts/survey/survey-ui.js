@@ -17,7 +17,6 @@ const clearSurveyModal = function () {
 const createSurveySuccess = (data) => {
   // console.log('createSurveySuccess')
   $('.list-group').empty()
-  getSurveys()
 }
 
 const createSurveyFailure = (error) => {
@@ -121,22 +120,6 @@ const getOneDynamicSurveySuccess = (data) => {
   // console.log('innerHTML: ', $('#create-response').attr('data-id'))
   $('#survey_question').text(data.survey.question)
   // $('#survey_owner').text(data.survey._owner)
-
-  if (data.survey.response_type === 'Number') {
-    $('#res-number').show()
-    $('#res-string').hide()
-    $('#res-boolean').hide()
-  }
-  if (data.survey.response_type === 'String') {
-    $('#res-number').hide()
-    $('#res-string').show()
-    $('#res-boolean').hide()
-  }
-  if (data.survey.response_type === 'Boolean') {
-    $('#res-number').hide()
-    $('#res-string').hide()
-    $('#res-boolean').show()
-  }
 }
 
 const getOneDynamicSurveyFailure = (error) => {
