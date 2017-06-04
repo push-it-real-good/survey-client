@@ -43,9 +43,9 @@
         <form id="sign-in">
           <div class="form-group blue-text">
             <label for="name"> Email</label>
-            <input type="text" name="credentials[email]" class="form-control signInPaw" autocomplete="off" placeholder="Enter Email" required="required" />
+            <input type="text" name="credentials[email]" class="form-control signInPaw" autocomplete="off" placeholder="Enter Email" required />
            <label for="name">Password</label>
-           <input type="password" name="credentials[password]" class="form-control"  autocomplete="off" placeholder="Password" require="required" />
+           <input type="password" name="credentials[password]" class="form-control"  autocomplete="off" placeholder="Password" required />
          </div>
          <div class="padding">
           <button type="submit" name="submit" value="SignIn" class="btn btn-primary btn-block"> Submit</button>
@@ -182,46 +182,57 @@
 </div>
 
 <!-- Create Survey Modal -->
-    <div id="createSurvey" class="modal fade" role="dialog">
-      <div class="modal-dialog" role="document">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Create Survey</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
 
-            <form id="create-survey">
-            <fieldset>
-              <div class="input-group">
-                <div class="col-sm-10">
-                  <span class="input-group-addon"  id="survey-title"></span>
-                  <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1">
-                </div>
-                <div class="col-sm-10">
-                    <span class="input-group-addon" id="survey-q1"></span>
-                  <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
-                </div>
-                <!-- <div class="col-sm-10">
-                  <span class="input-group-addon" id="survey-q2"></span>
-                  <input type="text" name="surveys[questionTwo]" id="q2" class="form-control" placeholder="Question 2" aria-describedby="basic-addon1">
-                </div>
-                <div class="col-sm-10">
-                  <span class="input-group-addon" id="survey-q2"></span>
-                  <input type="text" name="surveys[questionThree]" id="q3" class="form-control" placeholder="Question 3" aria-describedby="basic-addon1">
-                </div> -->
+</div>
+
+<!-- Create Survey Modal -->
+  <div id="createSurvey" class="modal fade container-fluid" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="form-title mdl-card__title">
+        <h3 class="form-header">Create Survey</h3>
+      </div>
+    </div>
+    <div class="modal-body">
+
+      <form id="create-survey" class="form-horizontal">
+        <fieldset>
+            <div class="input-group">
+              <div class="col-sm-12">
+                <span class="input-group-addon " id="survey-title">Survey Title</span>
+                <input type="text" name="survey[title]" id="title" class="form-control" placeholder="Enter Survey Title Here ..." aria-describedby="basic-addon1" required>
               </div>
-                <br>
-                <button type="submit" class="btn btn-primary" id= "create_survey">Create Survey</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </fieldset>
-            <br>
-            </form>
-          </div>
-        </div>
-    </div> <!-- End of Create Survey Modal -->
+
+              <div class="col-sm-12">
+                <span class="input-group-addon" id="survey-q1">Survey Question</span>
+                <input type="text" name="survey[question]" id="q1" class="form-control" placeholder="What is your question?" aria-describedby="basic-addon1" required>
+              </div>
+
+              <div class="col-sm-12">
+                <span class="input-group-addon" id="expected-response-type">Expected response type...</span>
+                <select id="response-type" name="survey[response_type]" class="form-control" required>
+                  <option value="" disabled  hidden>Select expected response type...</option>
+                  <option value="String">Text response</option>
+                  <option value="Boolean">Response of only "Yes" or "No"</option>
+                  <option value="Number">Rating Response : on a scale from 1 - 5</option>
+                </select>
+              </div>
+            </div>
+            <div class="padding"></div>
+
+            <button type="submit" class="btn btn-primary btn-block" id= "create_survey">Create Survey</button>
+            <div class="padding"></div>
+
+            <button type="button" class="btn btn-resolved btn-block" data-dismiss="modal">Close</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- End of Create Survey Modal -->
 
 
 
@@ -242,15 +253,15 @@
                   <div class="form-group">
                     <div class="col-sm-10 hideMe">
                       <span class="input-group-addon"  id="survey-id"></span>
-                      <input type="text" name="survey[id]" id="surveyId" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[id]" id="surveyId" class="form-control" hidden placeholder="Survey ID" aria-describedby="basic-addon1" required>
                     </div>
                     <div class="col-sm-10">
                       <span class="input-group-addon"  id="survey-title"></span>
-                      <input type="text" name="survey[title]" id="surveyTitle" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[title]" id="surveyTitle" class="form-control" placeholder="Survey Title" aria-describedby="basic-addon1" required>
                     </div>
                     <div class="col-sm-10">
                         <span class="input-group-addon" id="survey-q1"></span>
-                      <input type="text" name="survey[question]" id="surveyQ1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1">
+                      <input type="text" name="survey[question]" id="surveyQ1" class="form-control" placeholder="Question 1" aria-describedby="basic-addon1" required>
                     </div>
                   </div>
                   <br>
@@ -278,7 +289,13 @@
   <!-- Dynamic Section 3 -->
   <!-- respondents handlebars -->
   <div id="respondents" class="container col-md-12 dynamic-content">
-    <h1 id="default-display-text" text="surveys">Survey</h1>
+    <div id="jumbotron-top" class="jumbotron jumbotron-fluid">
+      <h2 id="title-message" class="title_message ">Survey Response</h2>
+      <h1 id="default-display-text" class="surveys-title"></h1>
+      <div class="jumbotron-msg container push-spaces">
+        <p></div>
+      </div>
+
     <!-- <ol class="dynamic-content">
     </ol> -->
     <table class="table table-sm" id="response-list-table">
@@ -296,11 +313,46 @@
           <!-- Create Response -->
             <td id="survey_response">
               <div class="input-group">
-                <form id="create-response">
+                <form id="create-response" novalidate>
                   <fieldset>
-                    <input type="text" name="response[text]" id="responseq1" class="form-control" placeholder="Response" aria-describedby="basic-addon1" required>
+
+                    <div id="res-number">
+                      <label>On a scale from 1 - 5 :    </label>
+                      <!-- <input id="response-text" type="number" min="1" max="5" step="1" maxlength="1" size="1" name="response[rating]" class="form-control" placeholder="Enter Your Response ..." required> -->
+                      <div <div class="w3-panel w3-border w3-border-red res-number-input">
+                      <input type="radio" name="response[rating]" value="1" required > 1
+                      <input type="radio" name="response[rating]" value="2" required > 2
+                      <input type="radio" name="response[rating]" value="3" required > 3
+                      <input type="radio" name="response[rating]" value="4" required > 4
+                      <input type="radio" name="response[rating]" value="5" required > 5
+                    </div>
+                    <div class="padding"></div>
+                    <input type="submit" disabled class="btn btn-primary" id= "res-number-create_response">
+                  </div>
+                </div>
+
+                    <div id="res-string">
+                      <label>Input your Answer : </label>
+                      <input id="responseq1" type="text" name="response[text]"  class="form-control res-string-input" placeholder="Response" aria-describedby="basic-addon1" required >
+                      <div class="padding"></div>
+                      <input type="submit" disabled class="btn btn-primary" id= "res-string-create_response">
+                    </div>
+
+                    <div id="res-boolean">
+                      <label>Select your Answer :</label><br>
+                      <label class="btn btn-lg response-btn-boolean" />
+                        <input type="radio" class="response-btn-boolean1" name="response[boolean]" value="true"  > YES
+                      </label>
+                      <label class="btn btn-lg response-btn-boolean">
+                        <input type="radio" class="response-btn-boolean2" name="response[boolean]" value="false" > NO
+                      </label>
+                      <div class="padding"></div>
+
+                      <input type="submit" disabled class="btn btn-primary" id= "res-boolean-create_response">
+                    </div>
+
                     <!-- <td id="survey_response_button_col"> -->
-                      <input type="submit" class="btn btn-primary" id= "create_response">
+                      <!-- <input type="submit" disabled class="btn btn-primary" id= "create_response"> -->
                     <!-- </td> -->
                     <div class="errors-create-response" > </div>
                   </fieldset>
